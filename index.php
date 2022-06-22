@@ -57,6 +57,7 @@
         }
         p {
             text-align:center;
+            color:red;
         }
 
     </style>
@@ -76,11 +77,11 @@
         <h1>Bem-vindo ao Veddit</h1>
         <br>
             <div class="row">
-                <a type="button" id="button" class="btn col-4" href="login/login.php">Logar</a>
+                <a type="button" id="button" class="btn col-4" href="login/Login.php">Logar</a>
             </div>
             <br>
             <div class="row">
-                <a type="button" id="button" class="btn col-4" href="register/register.php">Cadastrar</a>
+                <a type="button" id="button" class="btn col-4" href="register/Register.php">Cadastrar</a>
             </div>
     </div>
     <p><?php 

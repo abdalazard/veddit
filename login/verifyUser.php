@@ -1,5 +1,5 @@
 <?php
-include "../config/connection.php";
+include "../config/Connection.php";
 
 $email = $_POST['email'];
 $password = MD5($_POST['password']);
@@ -24,6 +24,6 @@ if(!strcmp($password, $dados['password'] )) {
     $_SESSION['password'] = $dados['password'];
     $_SESSION['profile'] = $dados['profile'];
 
-    header("location:/timeline/timeline.php");
+    header("location:/timeline/Timeline.php");
 }
 ?>
