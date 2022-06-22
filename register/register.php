@@ -12,7 +12,7 @@
             width: 70px;
             height: 80px;
         }
-        #login-panel {
+        #logo-login-panel {
             width: 100px;
             height: 110px;
             display: block;
@@ -42,7 +42,7 @@
         footer {
             text-align:center;
             color:coral;
-            font-size: smal
+            font-size: small
         }
         form {
             padding: 30px 30px 30px 30px;
@@ -74,7 +74,7 @@
         </nav>
 
         <div class="container" id="panel">
-            <img src="../images/veddit-logo.png" id="login-panel" alt="VEDDIT">
+            <img src="../images/veddit-logo.png" id="logo-login-panel" alt="VEDDIT">
             <h1>Crie sua conta</h1>           
             <br>
                 <form action="verifyUser.php" METHOD="POST">

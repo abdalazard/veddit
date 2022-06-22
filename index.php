@@ -12,7 +12,7 @@
             width: 70px;
             height: 80px;
         }
-        #login-panel {
+        #logo-login-panel {
             width: 100px;
             height: 110px;
             display: block;
@@ -60,7 +60,7 @@
         </nav>
 
         <div class="container" id="panel">
-            <img src="images/veddit-logo.png" id="login-panel" alt="VEDDIT">
+            <img src="images/veddit-logo.png" id="logo-login-panel" alt="VEDDIT">
 
             <h1>Bem-vindo ao Veddit</h1>
             <br>
