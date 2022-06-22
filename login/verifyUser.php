@@ -23,6 +23,7 @@ if(!strcmp($password, $dados['password'] )) {
     $_SESSION['email'] = $dados['email'];
     $_SESSION['password'] = $dados['password'];
     $_SESSION['profile'] = $dados['profile'];
+    session_start();
 
     header("location:/timeline/Timeline.php");
 }
