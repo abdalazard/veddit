@@ -12,7 +12,7 @@
             width: 70px;
             height: 80px;
         }
-        #logo-login-box {
+        #login-panel {
             width: 100px;
             height: 110px;
             display: block;
@@ -20,11 +20,13 @@
         }
         #title {
             color:coral;
+            text-decoration: ;            
         }
-        #log-box {
+        #panel {
             padding: 60px 60px 60px 60px;
             background-color: lightgrey;
             margin-top: 30px;
+            border-radius: 10px;
         }
         h1 {
             text-align:center;
@@ -33,20 +35,22 @@
             background-color:coral;
             display:block;
         }
-
+        #sem-sublinhado {
+            text-decoration: none;
+        }
     </style>
 </head>
 <body>
         <nav class="navbar bg-light">
             <div class="container-fluid">
-                <a href="index.php">
+                <a href="index.php" id="sem-sublinhado">
                     <span id="title" class="navbar-brand"><img src="images/veddit-logo.png" alt="VEDDIT" id="logo">VEDDIT</span>
                 </a>
             </div>
         </nav>
 
-        <div class="container" id="log-box">
-            <img src="images/veddit-logo.png" id="logo-login-box" alt="VEDDIT">
+        <div class="container" id="panel">
+            <img src="images/veddit-logo.png" id="login-panel" alt="VEDDIT">
 
             <h1>Bem-vindo ao Veddit</h1>
             <br>
