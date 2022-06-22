@@ -79,6 +79,10 @@
             <br>
                 <form action="createUser.php" METHOD="POST">
                     <div class="row">
+                        <label>Nome de usuário</label>
+                        <input type="text" class="col-4" maxlength="15" placeholder="Insira seu usuário" name="user" id="user" required>
+                    </div>    
+                    <div class="row">
                         <label>E-mail</label>
                         <input type="text" class="col-4" placeholder="Insira seu e-mail" name="email" id="email" required>
                     </div>

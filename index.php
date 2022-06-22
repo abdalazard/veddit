@@ -1,3 +1,11 @@
+<?php
+    ini_set('default_charset','UTF-8');
+
+    session_start();
+    if(isset($_SESSION["email"])){
+        header("location:/timeline/timeline.php");
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -47,32 +55,41 @@
         h1 {
             text-align:center;
         }
+        p {
+            text-align:center;
+        }
 
     </style>
 </head>
 <body>
-        <nav class="navbar bg-light">
-            <div class="container-fluid">
-                <a href="index.php" id="sem-sublinhado">
-                    <span id="title" class="navbar-brand"><img src="images/veddit-logo.png" alt="VEDDIT" id="logo">VEDDIT</span>
-                </a>
-            </div>
-        </nav>
-
-        <div class="container" id="panel">
-            <img src="images/veddit-logo.png" id="logo-login-panel" alt="VEDDIT">
-
-            <h1>Bem-vindo ao Veddit</h1>
-            <br>
-                <div class="row">
-                    <a type="button" id="button" class="btn col-4" href="login/login.php">Logar</a>
-                </div>
-                <br>
-                <div class="row">
-                    <a type="button" id="button" class="btn col-4" href="register/register.php">Cadastrar</a>
-                </div>
+    <nav class="navbar bg-light">
+        <div class="container-fluid">
+            <a href="index.php" id="sem-sublinhado">
+                <span id="title" class="navbar-brand"><img src="images/veddit-logo.png" alt="VEDDIT" id="logo">VEDDIT</span>
+            </a>
         </div>
-        <footer><b>Veddit</b> &copy Todos os direitos reservados 2022</footer>
-        
+    </nav>
+
+    <div class="container" id="panel">
+        <img src="images/veddit-logo.png" id="logo-login-panel" alt="VEDDIT">
+
+        <h1>Bem-vindo ao Veddit</h1>
+        <br>
+            <div class="row">
+                <a type="button" id="button" class="btn col-4" href="login/login.php">Logar</a>
+            </div>
+            <br>
+            <div class="row">
+                <a type="button" id="button" class="btn col-4" href="register/register.php">Cadastrar</a>
+            </div>
+    </div>
+    <p><?php 
+            if(isset($_GET["msg"])){ 
+                echo $_GET["msg"];
+            }
+        ?>
+    </p>
+    <footer><b>Veddit</b> &copy Todos os direitos reservados 2022</footer>
+    
 </body>
 </html>
