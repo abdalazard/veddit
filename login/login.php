@@ -62,6 +62,10 @@
             text-align: center;
             color: grey;
         }
+        p {
+            text-align:center;
+            color:green;
+        }
     </style>
 </head>
 <body>
@@ -77,7 +81,13 @@
             <img src="../images/veddit-logo.png" id="logo-login-panel" alt="VEDDIT">
             <h1>Acesse sua conta</h1>           
             <br>
-                <form action="verifyUser.php" METHOD="POST">
+            <p><?php 
+                    if(isset($_GET["msg"])){ 
+                        echo $_GET["msg"];
+                    }
+                ?>
+            </p>
+                <form action="VerifyUser.php" METHOD="POST">
                     <div class="row">
                         <label>E-mail</label>
                         <input type="text" class="col-4" placeholder="Insira seu e-mail" name="email" id="email" required>
@@ -89,8 +99,7 @@
                     <div class="row">
                         <input type="submit" class="btn col-4" id="button" value="Logar">
                     </div>
-                </form>
-           
+                </form>           
         </div>
         <footer><b>Veddit</b> &copy Todos os direitos reservados 2022</footer>
         

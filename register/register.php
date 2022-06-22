@@ -62,6 +62,10 @@
             text-align: center;
             color: grey;
         }
+        p {
+            text-align:center;
+            color:red;
+        }
     </style>
 </head>
 <body>
@@ -76,11 +80,17 @@
         <div class="container" id="panel">
             <img src="../images/veddit-logo.png" id="logo-login-panel" alt="VEDDIT">
             <h1>Crie sua conta</h1>           
+            <p><?php 
+                    if(isset($_GET["msg"])){ 
+                        echo $_GET["msg"];
+                    }
+                ?>
+            </p>
             <br>
-                <form action="createUser.php" METHOD="POST">
+                <form action="CreateUser.php" METHOD="POST">
                     <div class="row">
                         <label>Nome de usuário</label>
-                        <input type="text" class="col-4" maxlength="15" placeholder="Insira seu usuário" name="user" id="user" required>
+                        <input type="text" class="col-4" maxlength="15" placeholder="Insira seu usuário" name="name" id="name" required>
                     </div>    
                     <div class="row">
                         <label>E-mail</label>
