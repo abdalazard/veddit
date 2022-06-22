@@ -77,7 +77,7 @@
             <img src="../images/veddit-logo.png" id="logo-login-panel" alt="VEDDIT">
             <h1>Crie sua conta</h1>           
             <br>
-                <form action="verifyUser.php" METHOD="POST">
+                <form action="createUser.php" METHOD="POST">
                     <div class="row">
                         <label>E-mail</label>
                         <input type="text" class="col-4" placeholder="Insira seu e-mail" name="email" id="email" required>
