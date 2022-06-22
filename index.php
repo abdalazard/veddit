@@ -66,10 +66,6 @@
                 <a type="button" id="button" class="btn" href="register/register.php">Cadastrar</a>
             </div>
         </div>
-
-        <div class="container">
-            <footer><b>Veddit</b> &copy Todos os direitos reservados 2022</footer>
-        </div>
-        
+        <footer><b>Veddit</b> &copy Todos os direitos reservados 2022</footer>
 </body>
 </html>
