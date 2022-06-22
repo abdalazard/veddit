@@ -9,6 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <link rel="shortcut icon" href="../images/veddit-logo.png" >
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
     <title>Feed</title>
     <style>
         #logo {
@@ -50,19 +51,25 @@
         h1 {
             text-align:center;
         }
-        p {
-            text-align:center;
-            color:red;
+        #logout {
+            color:white;
+            background-color: red;
+            margin-right:30px;
         }
-
+        
     </style>
 </head>
 <body>
     <nav class="navbar bg-light">
         <div class="container-fluid">
-            <a href="../index.php" id="sem-sublinhado">
-                <span id="title" class="navbar-brand"><img src="../images/veddit-logo.png" alt="VEDDIT" id="logo"><b>VEDDIT</b></span>
-            </a>
+            <div class="row">
+                <a href="../index.php" id="sem-sublinhado">
+                    <span id="title" class="navbar-brand"><img src="../images/veddit-logo.png" alt="VEDDIT" id="logo"><b>VEDDIT</b></span>
+                </a>   
+            </div>
+            <div class="flex-end">             
+                <a type="button" id="logout" class="btn" href="../config/Logout.php" alt="Sair"><i class="bi bi-x-square-fill"></i>   <b>Logout</b></a>
+            </div>
         </div>
     </nav>
 
