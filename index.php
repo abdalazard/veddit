@@ -20,7 +20,6 @@
         }
         #title {
             color:coral;
-            text-decoration: ;            
         }
         #panel {
             padding: 60px 60px 60px 60px;
@@ -37,6 +36,11 @@
         }
         #sem-sublinhado {
             text-decoration: none;
+        }
+        footer {
+            text-align:center;
+            color:coral;
+            font-size: small;
         }
     </style>
 </head>
@@ -63,5 +67,9 @@
             </div>
         </div>
 
+        <div class="container">
+            <footer><b>Veddit</b> &copy Todos os direitos reservados 2022</footer>
+        </div>
+        
 </body>
 </html>
