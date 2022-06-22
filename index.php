@@ -3,7 +3,7 @@
 
     session_start();
     if(isset($_SESSION["email"])){
-        header("location:/timeline/Timeline.php");
+        header("location:timeline/Timeline.php");
     }
 ?>
 <!DOCTYPE html>
@@ -66,7 +66,7 @@
     <nav class="navbar bg-light">
         <div class="container-fluid">
             <a href="index.php" id="sem-sublinhado">
-                <span id="title" class="navbar-brand"><img src="images/veddit-logo.png" alt="VEDDIT" id="logo">VEDDIT</span>
+                <span id="title" class="navbar-brand"><img src="images/veddit-logo.png" alt="VEDDIT" id="logo"><b>VEDDIT</b></span>
             </a>
         </div>
     </nav>
