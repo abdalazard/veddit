@@ -27,12 +27,14 @@
             margin-top: 30px;
             border-radius: 10px;
         }
-        h1 {
-            text-align:center;
-        }
+        
         #button {
             background-color:coral;
             display:block;
+            margin-top: 10px;
+            color: white;
+            display: block;
+            margin: 0px auto;
         }
         #sem-sublinhado {
             text-decoration: none;
@@ -42,6 +44,10 @@
             color:coral;
             font-size: small;
         }
+        h1 {
+            text-align:center;
+        }
+
     </style>
 </head>
 <body>
@@ -58,14 +64,15 @@
 
             <h1>Bem-vindo ao Veddit</h1>
             <br>
-            <div>
-                <a type="button" id="button" class="btn" href="login/login.php">Logar</a>
-            </div>
-            <br>
-            <div >
-                <a type="button" id="button" class="btn" href="register/register.php">Cadastrar</a>
-            </div>
+                <div class="row">
+                    <a type="button" id="button" class="btn col-4" href="login/login.php">Logar</a>
+                </div>
+                <br>
+                <div class="row">
+                    <a type="button" id="button" class="btn col-4" href="register/register.php">Cadastrar</a>
+                </div>
         </div>
         <footer><b>Veddit</b> &copy Todos os direitos reservados 2022</footer>
+        
 </body>
 </html>
