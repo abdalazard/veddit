@@ -27,8 +27,9 @@
             text-align:center;
         }       
         #panel {
-            margin-top: 30px;
             border-radius: 10px;
+            display: block;
+            margin: 0px auto;
             width: fit-content;
 
         }
@@ -81,7 +82,7 @@
             </a>
         </div>
     </nav>
-
+    <br>
     <div class="container p-3 mb-2 bg-light text-dark" id="panel">
         <div id="button-group">
 

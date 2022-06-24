@@ -79,8 +79,9 @@
             </div>
         </nav>
         <div class="container p-3 mb-2 bg-light text-dark" id="panel">
-            <img src="../images/veddit-logo.png" id="logo-login-panel" alt="VEDDIT">
                 <form action="VerifyUser.php" METHOD="POST">
+                <img src="../images/veddit-logo.png" id="logo-login-panel" alt="VEDDIT">
+
                 <h1>Acesse sua conta</h1>           
                 <br>
                 <p><?php 
