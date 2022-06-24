@@ -27,7 +27,7 @@
         }
         #panel {
             padding: 60px 60px 60px 60px;
-            background-color: lightgrey;
+            background-color: gainsboro;
             margin-top: 30px;
             border-radius: 10px;
         }
@@ -56,7 +56,35 @@
             background-color: red;
             margin-right:30px;
         }
-        
+        #feed{            
+            background-color:white;
+            padding: 20px 20px 20px 20px;
+        }
+        #topic{
+            background-color:gainsboro;
+            padding: 5px 5px 5px 5px;
+            color:black;
+            margin-bottom: 20px;
+        }
+        #titleTopic {
+            text-align:start;
+        }
+        #tag {
+            text-align:center;
+            font-size: small;
+            margin:auto;
+        }
+        #linkTag {
+            color:black;
+            text-decoration: none;
+            background: white;
+            border-style: groove;
+            width: auto;
+            padding: 2px;
+            border: 1px solid groove;
+            margin: 2px;
+            margin-left: 15px;
+        }
     </style>
 </head>
 <body>
@@ -75,10 +103,35 @@
 
     <div class="container" id="panel">
         <img src="../images/veddit-logo.png" id="logo-login-panel" alt="VEDDIT">
-
         <h1>Feed</h1>
         <br>
-            
+        <div id="feed">
+            <div id="topic">
+                <h1 id="titleTopic">a</h1>
+                <!--teste -->
+                <div class="row">
+                    <a href="/tags.php?id=" id="linkTag"><p id="tag">
+                        NSFW
+                    </p></a>
+                    <a href="/tags.php?id=" id="linkTag"><p id="tag">
+                        Desabafo
+                    </p></a>
+                </div>
+            </div>
+
+            <div id="topic">
+                <h1 id="titleTopic">a</h1>
+                <div class="row">
+                    <a href="/tags.php?id=" id="linkTag"><p id="tag">
+                        Fun Animals
+                    </p></a>
+                    <a href="/tags.php?id=" id="linkTag"><p id="tag">
+                        Finances
+                    </p></a>
+                </div>
+                <!--/teste -->
+            </div>    
+        </div>
     </div>
     
     <footer><b>Veddit</b> &copy Todos os direitos reservados 2022</footer>
