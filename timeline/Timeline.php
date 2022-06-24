@@ -28,10 +28,8 @@
         #panel {
             padding: 60px 60px 60px 60px;
             margin-top: 30px;
-            border-radius: 10px;
-            
-        }
-        
+            border-radius: 10px;            
+        }        
         #button {
             background-color:coral;
             display:block;
@@ -62,9 +60,10 @@
         }
         #topic{
             padding: 5px 5px 5px 5px;
-            border: 1px;
-            border-radius: 15px;
-            border-style: groove;
+            border: 2px;
+            border-radius: 7px;
+            border-style: solid;
+            border-color: lightgrey;
             margin-bottom: 20px;            
         }
         #titleTopic {
