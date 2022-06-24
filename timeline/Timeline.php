@@ -58,13 +58,12 @@
         }
         #feed{            
             background-color:white;
-            border: 1px;
-            border-style: groove;
             padding: 20px 5px 20px 5px;
         }
         #topic{
             padding: 5px 5px 5px 5px;
             border: 1px;
+            border-radius: 2px;
             border-style: groove;
             margin-bottom: 20px;            
         }
