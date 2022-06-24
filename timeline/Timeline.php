@@ -27,9 +27,9 @@
         }
         #panel {
             padding: 60px 60px 60px 60px;
-            background-color: gainsboro;
             margin-top: 30px;
             border-radius: 10px;
+            
         }
         
         #button {
@@ -58,16 +58,19 @@
         }
         #feed{            
             background-color:white;
-            padding: 20px 20px 20px 20px;
+            border: 1px;
+            border-style: groove;
+            padding: 20px 5px 20px 5px;
         }
         #topic{
-            background-color:gainsboro;
             padding: 5px 5px 5px 5px;
-            color:black;
-            margin-bottom: 20px;
+            border: 1px;
+            border-style: groove;
+            margin-bottom: 20px;            
         }
         #titleTopic {
             text-align:start;
+            opacity: 70%;
         }
         #tag {
             text-align:center;
@@ -101,12 +104,12 @@
         </div>
     </nav>
 
-    <div class="container" id="panel">
+    <div class="container p-3 mb-2 bg-light text-dark" id="panel">
         <img src="../images/veddit-logo.png" id="logo-login-panel" alt="VEDDIT">
         <h1>Feed</h1>
         <br>
         <div id="feed">
-            <div id="topic">
+            <div class="p-3 mb-2 bg-light text-dark" id="topic">
                 <h1 id="titleTopic">a</h1>
                 <!--teste -->
                 <div class="row">
@@ -119,7 +122,7 @@
                 </div>
             </div>
 
-            <div id="topic">
+            <div class="p-3 mb-2 bg-light text-dark" id="topic">
                 <h1 id="titleTopic">a</h1>
                 <div class="row">
                     <a href="/tags.php?id=" id="linkTag"><p id="tag">
@@ -129,8 +132,8 @@
                         Finances
                     </p></a>
                 </div>
-                <!--/teste -->
             </div>    
+           <!--/teste -->
         </div>
     </div>
     
