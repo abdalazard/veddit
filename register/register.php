@@ -22,10 +22,10 @@
             color:coral;
         }
         #panel {
-            padding: 60px 60px 60px 60px;
-            background-color: lightgrey;
-            margin-top: 30px;
             border-radius: 10px;
+            display: block;
+            margin: 0px auto;
+            width: fit-content;           
         }
         h1 {
             text-align:center;
@@ -45,10 +45,12 @@
             font-size: small
         }
         form {
-            padding: 30px 30px 30px 30px;
+            padding: 30px 15px 15px 30px;
             background-color: white;
-            margin-top: 30px;
             border-radius: 10px;
+            display: block;
+            margin: 0px auto;
+            width: fit-content;
         }
         input {
             text-align: center;
@@ -72,33 +74,34 @@
         <nav class="navbar bg-light">
             <div class="container-fluid">
                 <a href="../index.php" id="sem-sublinhado">
-                    <span id="title" class="navbar-brand"><img src="../images/veddit-logo.png" alt="VEDDIT" id="logo">VEDDIT</span>
+                    <span id="title" class="navbar-brand"><img src="../images/veddit-logo.png" alt="VEDDIT" id="logo"><b>VEDDIT</b></span>
                 </a>
             </div>
         </nav>
-
-        <div class="container" id="panel">
-            <img src="../images/veddit-logo.png" id="logo-login-panel" alt="VEDDIT">
-            <h1>Crie sua conta</h1>           
-            <p><?php 
-                    if(isset($_GET["msg"])){ 
-                        echo $_GET["msg"];
-                    }
-                ?>
-            </p>
+        <br>
+        <div class="container p-3 mb-2 bg-light text-dark" id="panel">
             <br>
                 <form action="CreateUser.php" METHOD="POST">
+                    <img src="../images/veddit-logo.png" id="logo-login-panel" alt="VEDDIT">
+
+                    <h1>Crie sua conta</h1>           
+                    <p><?php 
+                            if(isset($_GET["msg"])){ 
+                                echo $_GET["msg"];
+                            }
+                        ?>
+                    </p>
                     <div class="row">
                         <label>Nome de usuário</label>
-                        <input type="text" class="col-4" maxlength="15" placeholder="Insira seu usuário" name="name" id="name" required>
+                        <input type="text" class="col-6" maxlength="15" placeholder="Insira seu usuário" name="name" id="name" required>
                     </div>    
                     <div class="row">
                         <label>E-mail</label>
-                        <input type="text" class="col-4" placeholder="Insira seu e-mail" name="email" id="email" required>
+                        <input type="text" class="col-6" placeholder="Insira seu e-mail" name="email" id="email" required>
                     </div>
                     <div class="row">
                         <label>Senha</label>
-                        <input type="password" class="col-4" placeholder="Digite sua senha" name="password" id="password" required>
+                        <input type="password" class="col-6" placeholder="Digite sua senha" name="password" id="password" required>
                     </div>
                     <div class="row">
                         <input type="submit" class="btn col-4" id="button" value="Cadastrar">

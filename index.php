@@ -3,7 +3,7 @@
 
     session_start();
     if(isset($_SESSION["email"])){
-        header("location:/timeline/Timeline.php");
+        header("location:timeline/Timeline.php");
     }
 ?>
 <!DOCTYPE html>
@@ -20,6 +20,19 @@
             width: 70px;
             height: 80px;
         }
+        #sem-sublinhado {
+            text-decoration: none;
+        }
+        h1 {
+            text-align:center;
+        }       
+        #panel {
+            border-radius: 10px;
+            display: block;
+            margin: 0px auto;
+            width: fit-content;
+
+        }
         #logo-login-panel {
             width: 100px;
             height: 110px;
@@ -27,15 +40,8 @@
             margin: 0px auto;
         }
         #title {
-            color:coral;
-        }
-        #panel {
-            padding: 60px 60px 60px 60px;
-            background-color: lightgrey;
-            margin-top: 30px;
-            border-radius: 10px;
-        }
-        
+            color: coral;
+        }        
         #button {
             background-color:coral;
             display:block;
@@ -44,21 +50,27 @@
             display: block;
             margin: 0px auto;
         }
+        #button-group {
+            padding: 30px 15px 15px 30px;
+            background-color: white;
+            border-radius: 10px;
+            display: block;
+            margin: 0px auto;
+            width: fit-content;
+        }
         #sem-sublinhado {
             text-decoration: none;
+        }
+        p {
+            text-align:center;
+            color:red;
         }
         footer {
             text-align:center;
             color:coral;
             font-size: small;
         }
-        h1 {
-            text-align:center;
-        }
-        p {
-            text-align:center;
-            color:red;
-        }
+       
 
     </style>
 </head>
@@ -66,23 +78,26 @@
     <nav class="navbar bg-light">
         <div class="container-fluid">
             <a href="index.php" id="sem-sublinhado">
-                <span id="title" class="navbar-brand"><img src="images/veddit-logo.png" alt="VEDDIT" id="logo">VEDDIT</span>
+                <span id="title" class="navbar-brand"><img src="images/veddit-logo.png" alt="VEDDIT" id="logo"><b>VEDDIT</b></span>
             </a>
         </div>
     </nav>
+    <br>
+    <div class="container p-3 mb-2 bg-light text-dark" id="panel">
+        <div id="button-group">
 
-    <div class="container" id="panel">
-        <img src="images/veddit-logo.png" id="logo-login-panel" alt="VEDDIT">
+            <img src="images/veddit-logo.png" id="logo-login-panel" alt="VEDDIT">
 
-        <h1>Bem-vindo ao Veddit</h1>
-        <br>
-            <div class="row">
-                <a type="button" id="button" class="btn col-4" href="login/Login.php">Logar</a>
-            </div>
+            <h1>Bem-vindo ao Veddit</h1>
             <br>
-            <div class="row">
-                <a type="button" id="button" class="btn col-4" href="register/Register.php">Cadastrar</a>
-            </div>
+                <div class="row">
+                    <a type="button" id="button" class="btn col-8" href="login/Login.php">Logar</a>
+                </div>
+                <br>
+                <div class="row">
+                    <a type="button" id="button" class="btn col-8" href="register/Register.php">Cadastrar</a>
+                </div>
+        </div>
     </div>
     <p><?php 
             if(isset($_GET["msg"])){ 

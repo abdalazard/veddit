@@ -14,7 +14,7 @@ if(mysqli_num_rows($search) > 0){
     header("location:Register.php?msg=".$msg);
 }
 else {
-    $sql = "INSERT INTO users VALUES(null, '".$name."', '".$email."','".$password."', '1')";
+    $sql = "INSERT INTO users VALUES(null, '".$name."', '".$email."','".$password."', '2')";
     $result = mysqli_query($conn, $sql);
     if(!$result){
         mysqli_close($conn);
