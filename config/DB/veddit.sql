@@ -19,9 +19,8 @@ user_id int,
 content varchar(255),
 likes INT(3),
 dislike INT(3),
-tags int(2)
+tagName varchar(20)
 );
 
 
-INSERT INTO Posts VALUES (NULL, 1, "Teste de post", 2, 1);
-
+INSERT INTO Posts VALUES (NULL, 1, "Teste de post", 2, 1, 'Meme');

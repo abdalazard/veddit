@@ -1,5 +1,10 @@
 <?php
     include '../config/Autentication.php';
+    include '../config/connection.php';
+
+    $sql = "SELECT * FROM Posts";
+    $dados = mysqli_query($conn, $sql);
+    $result = mysqli_fetch_array($dados);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -11,82 +16,7 @@
     <link rel="shortcut icon" href="../images/veddit-logo.png" >
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
     <title>Feed</title>
-    <style>
-        #logo {
-            width: 70px;
-            height: 80px;
-        }
-        #logo-login-panel {
-            width: 100px;
-            height: 110px;
-            display: block;
-            margin: 0px auto;
-        }
-        #title {
-            color:coral;
-        }
-        #panel {
-            padding: 60px 60px 60px 60px;
-            margin-top: 30px;
-            border-radius: 10px;            
-        }        
-        #button {
-            background-color:coral;
-            display:block;
-            margin-top: 10px;
-            color: white;
-            display: block;
-            margin: 0px auto;
-        }
-        #sem-sublinhado {
-            text-decoration: none;
-        }
-        footer {
-            text-align:center;
-            color:coral;
-            font-size: small;
-        }
-        h1 {
-            text-align:center;
-        }
-        #logout {
-            color:white;
-            background-color: red;
-            margin-right:30px;
-        }
-        #feed{            
-            background-color:white;
-            padding: 20px 5px 20px 5px;
-        }
-        #topic{
-            padding: 5px 5px 5px 5px;
-            border: 2px;
-            border-radius: 7px;
-            border-style: solid;
-            border-color: lightgrey;
-            margin-bottom: 20px;            
-        }
-        #titleTopic {
-            text-align:start;
-            opacity: 70%;
-        }
-        #tag {
-            text-align:center;
-            font-size: small;
-            margin:auto;
-        }
-        #linkTag {
-            color:black;
-            text-decoration: none;
-            background: white;
-            border-style: groove;
-            width: auto;
-            padding: 2px;
-            border: 1px solid groove;
-            margin: 2px;
-            margin-left: 15px;
-        }
-    </style>
+    <link href="style/style.css" rel="stylesheet">
 </head>
 <body>
     <nav class="navbar bg-light">
@@ -107,31 +37,18 @@
         <h1>Feed</h1>
         <br>
         <div id="feed">
+
+        <!-- a -->
+        <?php foreach($dados as $dado){?>
             <div class="p-3 mb-2 bg-light text-dark" id="topic">
-                <h1 id="titleTopic">a</h1>
-                <!--teste -->
                 <div class="row">
-                    <a href="/tags.php?id=" id="linkTag"><p id="tag">
-                        NSFW
-                    </p></a>
-                    <a href="/tags.php?id=" id="linkTag"><p id="tag">
-                        Desabafo
-                    </p></a>
+                    <a href=""  id="sem-sublinhado"><h1 id="titleTopic"></h1><?php echo $dado['content']; ?></h1></a>
+                </div>
+                <div class="row">
+                    <a href="/tags.php?id=" id="linkTag" name="tag"><?php echo $dado['tagName'] ?></a>
                 </div>
             </div>
-
-            <div class="p-3 mb-2 bg-light text-dark" id="topic">
-                <h1 id="titleTopic">a</h1>
-                <div class="row">
-                    <a href="/tags.php?id=" id="linkTag"><p id="tag">
-                        Fun Animals
-                    </p></a>
-                    <a href="/tags.php?id=" id="linkTag"><p id="tag">
-                        Finances
-                    </p></a>
-                </div>
-            </div>    
-           <!--/teste -->
+            <?php }?>
         </div>
     </div>
     
