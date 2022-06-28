@@ -1,0 +1,60 @@
+#logo {
+    width: 70px;
+    height: 80px;
+}
+#logo-login-panel {
+    width: 100px;
+    height: 110px;
+    display: block;
+    margin: 0px auto;
+}
+#title {
+    color:coral;
+}
+#panel {
+    border-radius: 10px;
+    display: block;
+    margin: 0px auto;
+    width: fit-content;           
+}
+h1 {
+    text-align:center;
+}
+#button {
+    background-color:coral;
+    display:block;
+    margin-top: 10px;
+    color: white;
+}
+#sem-sublinhado {
+    text-decoration: none;
+}
+footer {
+    text-align:center;
+    color:coral;
+    font-size: small
+}
+form {
+    padding: 30px 15px 15px 30px;
+    background-color: white;
+    border-radius: 10px;
+    display: block;
+    margin: 0px auto;
+    width: fit-content;
+}
+input {
+    text-align: center;
+    display: block;
+    margin: 0px auto;
+}
+.row {
+    margin-bottom: 30px;
+}
+label {
+    text-align: center;
+    color: grey;
+}
+p {
+    text-align:center;
+    color:red;
+}
