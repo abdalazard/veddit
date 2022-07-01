@@ -3,9 +3,9 @@
     include '../config/connection.php';
 
     $sql = "SELECT * FROM Posts";
-    $datas = mysqli_query($conn, $sql);
-    $result = mysqli_fetch_array($datas);
-    $rows = mysqli_num_rows($datas);
+    $result = mysqli_query($conn, $sql);
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -38,13 +38,23 @@
         <h1>Feed</h1>
         <br>
         <div id="feed">
+            <?php 
+                if($result){
+                    $num = mysqli_num_rows($result);
+                    for($i = 1; $i <= $num; $i++){
+                        $dados = mysqli_fetch_array($result);
+            ?>
             <div class="p-3 mb-2 bg-light text-dark" id="topic">
                 <div class="row" >
                     <a href="" id="sem-sublinhado">
-                        <h1 id="titleTopic">Teste</h1>
+                        <h1 id="titleTopic"><?php echo $dados['title'] ?></h1>
                     </a>
                 </div>
             </div>
+            <?php 
+                    }
+                }
+            ?>
         </div>
     </div>
     

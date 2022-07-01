@@ -16,7 +16,7 @@ CREATE TABLE Posts (
 
 id int primary key auto_increment,
 user_id int,
-content varchar(255),
+title varchar(255),
 likes INT(3),
 dislike INT(3),
 tagName varchar(20)
