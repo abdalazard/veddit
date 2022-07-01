@@ -46,7 +46,7 @@
             ?>
             <div class="p-3 mb-2 bg-light text-dark" id="topic">
                 <div class="row" >
-                    <a href="" id="sem-sublinhado">
+                    <a href="./timeline/posts/post.php"<?php $dados['id']; ?> id="sem-sublinhado">
                         <h1 id="titleTopic"><?php echo $dados['title'] ?></h1>
                     </a>
                 </div>
