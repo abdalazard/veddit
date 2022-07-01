@@ -3,8 +3,9 @@
     include '../config/connection.php';
 
     $sql = "SELECT * FROM Posts";
-    $dados = mysqli_query($conn, $sql);
-    $result = mysqli_fetch_array($dados);
+    $datas = mysqli_query($conn, $sql);
+    $result = mysqli_fetch_array($datas);
+    $rows = mysqli_num_rows($datas);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -37,18 +38,13 @@
         <h1>Feed</h1>
         <br>
         <div id="feed">
-
-        <!-- a -->
-        <?php foreach($dados as $dado){?>
             <div class="p-3 mb-2 bg-light text-dark" id="topic">
-                <div class="row">
-                    <a href=""  id="sem-sublinhado"><h1 id="titleTopic"></h1><?php echo $dado['content']; ?></h1></a>
-                </div>
-                <div class="row">
-                    <a href="/tags.php?id=" id="linkTag" name="tag"><?php echo $dado['tagName'] ?></a>
+                <div class="row" >
+                    <a href="" id="sem-sublinhado">
+                        <h1 id="titleTopic">Teste</h1>
+                    </a>
                 </div>
             </div>
-            <?php }?>
         </div>
     </div>
     
