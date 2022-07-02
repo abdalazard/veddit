@@ -35,7 +35,7 @@
         <div id="row">
             <input type="text" hidden name="title" value="<?php echo $title ?>" >
             <input type="text" hidden name="idUser" value="<?php echo $_SESSION['idUser'] ?>" >
-            <textarea name="content" id="content" rows="10" class="col-12"></textarea>
+            <textarea name="content" id="content" rows="10" maxlength="255" class="col-12"></textarea>
         </div>
         <div >
             <!-- aaaaaaaah! não consigo colocar esse botão no canto... -->

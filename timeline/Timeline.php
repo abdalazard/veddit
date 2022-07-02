@@ -57,24 +57,24 @@ $result = mysqli_query($conn, $sql);
 
         <div id="feed">
             <?php
-            if ($result) {
-                ?>
+                if ($result) {
+            ?>
                 <form action="/timeline/posts/open_post.php" METHOD="GET">
                 <?php
-                $num = mysqli_num_rows($result);
-                for ($i = 1; $i <= $num; $i++) {
-                    $dados = mysqli_fetch_array($result);
-            ?>
+                    $num = mysqli_num_rows($result);
+                    for ($i = 1; $i <= $num; $i++) {
+                        $dados = mysqli_fetch_array($result);
+                ?>
                             <div id="topic" class="p-2 mb-1 bg-light text-dark">
                                 <input type="text" name="idPost" hidden value="<?php echo $dados['id'] ?>">
                                 <input type="submit" style="border:none;" class="bg-light"  id='titleTopic' Value="<?php echo $dados['title'] ?>">
                             </div>
-            <?php
-                }
+                <?php
+                    }
                 ?>
                 </form>
             <?php
-            }
+                }
             ?>
         </div>
     </div>
