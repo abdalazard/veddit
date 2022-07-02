@@ -15,8 +15,8 @@ insert into Users values(null,"ADM","abdalazard@gmail.com",md5("123"),"1");
 CREATE TABLE Posts (
     id int primary key auto_increment,
     user_id int,
-    title varchar(255),
-    content varchar(255),
+    title varchar(255) NOT NULL,
+    content varchar(255) NOT NULL,
     likes INT(3),
     dislike INT(3),
     tagName varchar(20)

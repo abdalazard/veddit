@@ -1,5 +1,6 @@
 <?php
-$title = $_GET['title'];
+    include '../../config/Autentication.php';
+    $title = $_GET['title'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -32,14 +33,13 @@ $title = $_GET['title'];
     </div>
     <form action="CreatePost.php" METHOD="POST">
         <div id="row">
+            <input type="text" hidden name="title" value="<?php echo $title ?>" >
+            <input type="text" hidden name="idUser" value="<?php echo $_SESSION['idUser'] ?>" >
             <textarea name="content" id="content" rows="10" class="col-12"></textarea>
         </div>
         <div >
             <!-- aaaaaaaah! não consigo colocar esse botão no canto... -->
             <input type="submit" class="btn col-4" id="button" value="Publicar">
-        </div>
-        <div>
-
         </div>
     </form>
     </div>

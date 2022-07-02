@@ -2,7 +2,7 @@
     include '../config/Autentication.php';
     include '../config/connection.php';
 
-    $sql = "SELECT * FROM Posts";
+    $sql = "SELECT * FROM Posts ORDER BY id DESC";
     $result = mysqli_query($conn, $sql);
 
 
@@ -36,18 +36,23 @@
         <img src="../images/veddit-logo.png" id="logo-login-panel" alt="VEDDIT">
         <h1>Feed</h1>
         <br>
-
         <div>
-            <form action="./posts/create_post.php" METHOD="GET">
+            <form action="../timeline/posts/create_post.php" METHOD="GET">
                 <div class="row">
                         <input type="text" name="title" class="col-8" id="titlespace" placeholder="Crie um tópico">
                         <input type="submit" class="btn col-4" id="button" value="Publicar">
                 </div>
             </form>
         </div>
-
+        <br>
+        <?php  if(isset($_GET["msg"])){ 
+        ?>
+            <div>
+                <p style="text-align:center;"><?php echo $_GET['msg']?></p>
+            </div>
+        <?php } ?>
         <div id="feed">
-            <?php 
+                <?php 
                 if($result){
                     $num = mysqli_num_rows($result);
                     for($i = 1; $i <= $num; $i++){
