@@ -32,11 +32,22 @@
             </div>
         </div>
     </nav>
-
     <div class="container p-3 mb-2 bg-light text-dark" id="panel">
         <img src="../images/veddit-logo.png" id="logo-login-panel" alt="VEDDIT">
         <h1>Feed</h1>
         <br>
+
+        <div>
+            <form action="./posts/CreatePost.php" METHOD="POST">
+                <div class="row">
+                    <div class="col">
+                        <input type="text" name="title" class="col-12" placeholder="Crie um tópico">
+                    </div>
+                        <input type="submit" class="btn col-4" id="button" value="Publicar">
+                </div>
+            </form>
+        </div>
+
         <div id="feed">
             <?php 
                 if($result){
@@ -46,7 +57,7 @@
             ?>
             <div class="p-3 mb-2 bg-light text-dark" id="topic">
                 <div class="row" >
-                    <a href="./timeline/posts/post.php"<?php $dados['id']; ?> id="sem-sublinhado">
+                    <a href="" id="sem-sublinhado">
                         <h1 id="titleTopic"><?php echo $dados['title'] ?></h1>
                     </a>
                 </div>
