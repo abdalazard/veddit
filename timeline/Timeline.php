@@ -65,10 +65,13 @@ $result = mysqli_query($conn, $sql);
                     for ($i = 1; $i <= $num; $i++) {
                         $dados = mysqli_fetch_array($result);
                 ?>
-                            <div id="topic" class="p-2 mb-1 bg-light text-dark">
-                                <input type="text" name="idPost" hidden value="<?php echo $dados['id'] ?>">
-                                <input type="submit" style="border:none;" class="bg-light"  id='titleTopic' Value="<?php echo $dados['title'] ?>">
-                            </div>
+                        <div id="topic" class="p-2 mb-1 bg-light text-dark">
+                            <a href="../timeline/posts/open_post.php?idPost=<?php echo $dados['id'] ?>" id="sem-sublinhado" >
+                                <p  id="titleTopic">
+                                    <?php echo $dados['title'] ?>
+                                </p>
+                            </a>                                
+                        </div>
                 <?php
                     }
                 ?>
