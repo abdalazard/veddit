@@ -17,10 +17,6 @@
             border-radius: 10px;            
         }        
 
-        #titlespace{
-            background-color: black;
-        }
-
         #button {
             background-color:coral;
             display:block;
@@ -77,4 +73,7 @@
             border: 1px solid groove;
             margin: 2px;
             margin-left: 15px;
+        }
+        textarea {
+            resize: none;
         }

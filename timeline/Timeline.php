@@ -38,7 +38,7 @@
         <br>
 
         <div>
-            <form action="./posts/CreatePost.php" METHOD="POST">
+            <form action="./posts/create_post.php" METHOD="GET">
                 <div class="row">
                         <input type="text" name="title" class="col-8" id="titlespace" placeholder="Crie um tópico">
                         <input type="submit" class="btn col-4" id="button" value="Publicar">

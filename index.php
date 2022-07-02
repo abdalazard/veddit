@@ -3,7 +3,7 @@
 
     session_start();
     if(isset($_SESSION["email"])){
-        header("location:timeline/Timeline.php");
+        header("location:timeline/timeline.php");
     }
 ?>
 <!DOCTYPE html>
