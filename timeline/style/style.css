@@ -16,6 +16,11 @@
             margin-top: 30px;
             border-radius: 10px;            
         }        
+
+        #titlespace{
+            background-color: black;
+        }
+
         #button {
             background-color:coral;
             display:block;

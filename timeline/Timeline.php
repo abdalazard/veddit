@@ -40,9 +40,7 @@
         <div>
             <form action="./posts/CreatePost.php" METHOD="POST">
                 <div class="row">
-                    <div class="col">
-                        <input type="text" name="title" class="col-12" placeholder="Crie um tópico">
-                    </div>
+                        <input type="text" name="title" class="col-8" id="titlespace" placeholder="Crie um tópico">
                         <input type="submit" class="btn col-4" id="button" value="Publicar">
                 </div>
             </form>
