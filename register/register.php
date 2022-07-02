@@ -7,68 +7,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <link rel="shortcut icon" href="../images/veddit-logo.png" >
     <title>Inicio</title>
-    <style>
-        #logo {
-            width: 70px;
-            height: 80px;
-        }
-        #logo-login-panel {
-            width: 100px;
-            height: 110px;
-            display: block;
-            margin: 0px auto;
-        }
-        #title {
-            color:coral;
-        }
-        #panel {
-            border-radius: 10px;
-            display: block;
-            margin: 0px auto;
-            width: fit-content;           
-        }
-        h1 {
-            text-align:center;
-        }
-        #button {
-            background-color:coral;
-            display:block;
-            margin-top: 10px;
-            color: white;
-        }
-        #sem-sublinhado {
-            text-decoration: none;
-        }
-        footer {
-            text-align:center;
-            color:coral;
-            font-size: small
-        }
-        form {
-            padding: 30px 15px 15px 30px;
-            background-color: white;
-            border-radius: 10px;
-            display: block;
-            margin: 0px auto;
-            width: fit-content;
-        }
-        input {
-            text-align: center;
-            display: block;
-            margin: 0px auto;
-        }
-        .row {
-            margin-bottom: 30px;
-        }
-        label {
-            text-align: center;
-            color: grey;
-        }
-        p {
-            text-align:center;
-            color:red;
-        }
-    </style>
+    <link href="style/style.css" rel="stylesheet">
 </head>
 <body>
         <nav class="navbar bg-light">

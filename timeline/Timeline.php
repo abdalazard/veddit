@@ -1,141 +1,89 @@
 <?php
-    include '../config/Autentication.php';
+include '../config/Autentication.php';
+include '../config/connection.php';
+
+$sql = "SELECT * FROM Posts ORDER BY id DESC";
+$result = mysqli_query($conn, $sql);
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-    <link rel="shortcut icon" href="../images/veddit-logo.png" >
+    <link rel="shortcut icon" href="../images/veddit-logo.png">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
     <title>Feed</title>
-    <style>
-        #logo {
-            width: 70px;
-            height: 80px;
-        }
-        #logo-login-panel {
-            width: 100px;
-            height: 110px;
-            display: block;
-            margin: 0px auto;
-        }
-        #title {
-            color:coral;
-        }
-        #panel {
-            padding: 60px 60px 60px 60px;
-            margin-top: 30px;
-            border-radius: 10px;            
-        }        
-        #button {
-            background-color:coral;
-            display:block;
-            margin-top: 10px;
-            color: white;
-            display: block;
-            margin: 0px auto;
-        }
-        #sem-sublinhado {
-            text-decoration: none;
-        }
-        footer {
-            text-align:center;
-            color:coral;
-            font-size: small;
-        }
-        h1 {
-            text-align:center;
-        }
-        #logout {
-            color:white;
-            background-color: red;
-            margin-right:30px;
-        }
-        #feed{            
-            background-color:white;
-            padding: 20px 5px 20px 5px;
-        }
-        #topic{
-            padding: 5px 5px 5px 5px;
-            border: 2px;
-            border-radius: 7px;
-            border-style: solid;
-            border-color: lightgrey;
-            margin-bottom: 20px;            
-        }
-        #titleTopic {
-            text-align:start;
-            opacity: 70%;
-        }
-        #tag {
-            text-align:center;
-            font-size: small;
-            margin:auto;
-        }
-        #linkTag {
-            color:black;
-            text-decoration: none;
-            background: white;
-            border-style: groove;
-            width: auto;
-            padding: 2px;
-            border: 1px solid groove;
-            margin: 2px;
-            margin-left: 15px;
-        }
-    </style>
+    <link href="style/style.css" rel="stylesheet">
 </head>
+
 <body>
     <nav class="navbar bg-light">
         <div class="container-fluid">
             <div class="row">
                 <a href="../index.php" id="sem-sublinhado">
                     <span id="title" class="navbar-brand"><img src="../images/veddit-logo.png" alt="VEDDIT" id="logo"><b>VEDDIT</b></span>
-                </a>   
+                </a>
             </div>
-            <div class="flex-end">             
-                <a type="button" id="logout" class="btn" href="../config/Logout.php" alt="Sair"><i class="bi bi-x-square-fill"></i>   <b>Logout</b></a>
+            <div class="flex-end">
+                <a type="button" id="logout" class="btn" href="../config/Logout.php" alt="Sair"><i class="bi bi-x-square-fill"></i> <b>Logout</b></a>
             </div>
         </div>
     </nav>
-
     <div class="container p-3 mb-2 bg-light text-dark" id="panel">
         <img src="../images/veddit-logo.png" id="logo-login-panel" alt="VEDDIT">
         <h1>Feed</h1>
         <br>
-        <div id="feed">
-            <div class="p-3 mb-2 bg-light text-dark" id="topic">
-                <h1 id="titleTopic">a</h1>
-                <!--teste -->
+        <div>
+            <form action="../timeline/posts/create_post.php" METHOD="GET">
                 <div class="row">
-                    <a href="/tags.php?id=" id="linkTag"><p id="tag">
-                        NSFW
-                    </p></a>
-                    <a href="/tags.php?id=" id="linkTag"><p id="tag">
-                        Desabafo
-                    </p></a>
+                    <input type="text" name="title" class="col-8" id="titlespace" placeholder="Crie um tópico">
+                    <input type="submit" class="btn col-4" id="button" value="Publicar">
                 </div>
-            </div>
+            </form>
+        </div>
+        <br>
 
-            <div class="p-3 mb-2 bg-light text-dark" id="topic">
-                <h1 id="titleTopic">a</h1>
-                <div class="row">
-                    <a href="/tags.php?id=" id="linkTag"><p id="tag">
-                        Fun Animals
-                    </p></a>
-                    <a href="/tags.php?id=" id="linkTag"><p id="tag">
-                        Finances
-                    </p></a>
-                </div>
-            </div>    
-           <!--/teste -->
+        <?php if (isset($_GET["msg"])) {
+        ?>
+            <div>
+                <p style="text-align:center;"><?php echo $_GET['msg'] ?></p>
+            </div>
+        <?php } ?>
+
+        <div id="feed">
+            <?php
+                if ($result) {
+            ?>
+                <form action="/timeline/posts/open_post.php" METHOD="GET">
+                <?php
+                    $num = mysqli_num_rows($result);
+                    for ($i = 1; $i <= $num; $i++) {
+                        $dados = mysqli_fetch_array($result);
+                ?>
+                        <div id="topic" class="p-2 mb-1 bg-light text-dark">
+                            <a href="../timeline/posts/open_post.php?idPost=<?php echo $dados['id'] ?>" id="sem-sublinhado" >
+                                <p  id="titleTopic">
+                                    <?php echo $dados['title'] ?>
+                                </p>
+                            </a>                                
+                        </div>
+                <?php
+                    }
+                ?>
+                </form>
+            <?php
+                }
+            ?>
         </div>
     </div>
-    
+
     <footer><b>Veddit</b> &copy Todos os direitos reservados 2022</footer>
-    
+
 </body>
+
 </html>
