@@ -45,18 +45,20 @@
             </form>
         </div>
         <br>
+
         <?php  if(isset($_GET["msg"])){ 
         ?>
             <div>
                 <p style="text-align:center;"><?php echo $_GET['msg']?></p>
             </div>
         <?php } ?>
+
         <div id="feed">
-                <?php 
-                if($result){
-                    $num = mysqli_num_rows($result);
-                    for($i = 1; $i <= $num; $i++){
-                        $dados = mysqli_fetch_array($result);
+            <?php 
+            if($result){
+                $num = mysqli_num_rows($result);
+                for($i = 1; $i <= $num; $i++){
+                    $dados = mysqli_fetch_array($result);
             ?>
             <div class="p-3 mb-2 bg-light text-dark" id="topic">
                 <div class="row" >
@@ -66,8 +68,8 @@
                 </div>
             </div>
             <?php 
-                    }
                 }
+            }
             ?>
         </div>
     </div>
