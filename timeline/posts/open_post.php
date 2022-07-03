@@ -38,10 +38,11 @@ $dados = mysqli_fetch_array($result);
     </nav>
     <div class="container p-3 mb-2 bg-light text-dark" id="panel">
         <img src="/images/veddit-logo.png" id="logo-login-panel" alt="VEDDIT">
-        <h1>Feed</h1>
-        <br>
-
+        <h1><?php echo $dados['title'] ?></h1>        
         <div id="feed">
+            <div>
+                <p style="text-align:center;"><?php echo $dados['content'] ?></p>
+            </div>
         </div>
     </div>
 </body>
