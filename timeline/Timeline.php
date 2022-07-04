@@ -2,7 +2,7 @@
 include '../config/Autentication.php';
 include '../config/connection.php';
 
-$sql = "SELECT * FROM Posts ORDER BY id DESC";
+$sql = "SELECT * FROM Topics ORDER BY id DESC";
 $result = mysqli_query($conn, $sql);
 
 
@@ -38,7 +38,7 @@ $result = mysqli_query($conn, $sql);
         <h1>Feed</h1>
         <br>
         <div>
-            <form action="../timeline/posts/create_post.php" METHOD="GET">
+            <form action="../timeline/topics/create_topic.php" METHOD="GET">
                 <div class="row" style="text-align:center">
                         <input type="text" name="title" class="col-9" placeholder="Crie um tópico">
                     <div class="col-3">
@@ -58,14 +58,14 @@ $result = mysqli_query($conn, $sql);
             <?php
                 if ($result) {
             ?>
-                <form action="/timeline/posts/open_post.php" METHOD="GET">
+                <form action="/timeline/topics/open_topic.php" METHOD="GET">
                 <?php
                     $num = mysqli_num_rows($result);
                     for ($i = 1; $i <= $num; $i++) {
                         $dados = mysqli_fetch_array($result);
                 ?>
                         <div id="topic" class="p-2 mb-1 bg-light text-dark">
-                            <a href="../timeline/posts/open_post.php?idPost=<?php echo $dados['id'] ?>" id="sem-sublinhado" >
+                            <a href="../timeline/topics/open_topic.php?idTopic=<?php echo $dados['id'] ?>" id="sem-sublinhado" >
                                 <p  id="titleTopic">
                                     <?php echo $dados['title'] ?>
                                 </p>

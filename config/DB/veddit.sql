@@ -12,9 +12,10 @@ CREATE TABLE Users (
 
 insert into Users values(null,"ADM","abdalazard@gmail.com",md5("123"),"1");
 
-CREATE TABLE Posts (
+CREATE TABLE Topics (
     id int primary key auto_increment,
     user_id int,
+    group_id
     title varchar(255) NOT NULL,
     content varchar(255) NOT NULL,
     likes INT(3),
@@ -22,4 +23,4 @@ CREATE TABLE Posts (
     tagName varchar(20)
 );
 
-INSERT INTO Posts VALUES (NULL, 1, "Teste de post", "testando texto", 2, 1, 'Meme');
+INSERT INTO Topics VALUES (NULL, 1, "Teste de post", "testando texto", 2, 1, 'Meme');

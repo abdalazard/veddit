@@ -12,7 +12,7 @@
     <link rel="shortcut icon" href="../images/veddit-logo.png" >
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
     <title>Criador de tópico</title>
-    <link href="/timeline/posts/style/style.css" rel="stylesheet">
+    <link href="/timeline/topics/style/style.css" rel="stylesheet">
 </head>
 <body>
     <nav class="navbar bg-light">
@@ -31,7 +31,7 @@
         <div>
             <h1 id="titleTopic" style="text-align:center; font-size:50px;"><?php echo $title ?></h1>
         </div>
-        <form action="CreatePost.php" METHOD="POST">
+        <form action="CreateTopic.php" METHOD="POST">
             <div id="row">
                 <input type="text" hidden name="title" value="<?php echo $title ?>">
                 <input type="text" hidden name="idUser" value="<?php echo $_SESSION['idUser'] ?>">

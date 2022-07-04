@@ -2,9 +2,9 @@
     include '../../config/Autentication.php';
     include '../../config/connection.php';
 
-    $idPost = $_GET['idPost'];
+    $idTopic = $_GET['idTopic'];
 
-    $sql = "SELECT * FROM Posts WHERE id LIKE '".$idPost."'";
+    $sql = "SELECT * FROM Topics WHERE id LIKE '".$idTopic."'";
     $result = mysqli_query($conn, $sql);
 
     $dados = mysqli_fetch_array($result);    
@@ -20,7 +20,7 @@
     <link rel="shortcut icon" href="../images/veddit-logo.png">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
     <title>Tópico</title>
-    <link href="/timeline/posts/style/style.css" rel="stylesheet">
+    <link href="/timeline/topics/style/style.css" rel="stylesheet">
 </head>
 <body>
     <nav class="navbar bg-light">
@@ -40,7 +40,7 @@
         <h1><?php echo $dados['title'] ?></h1>        
         <div id="post">            
             <div style="display: flex; justify-content: flex-end;">
-                <a href="delete_post.php?idPost=<?php echo $idPost ?>" class="btn col-3" id="delete_button">Excluir Tópico</a>
+                <a href="delete_topic.php?idTopic=<?php echo $idTopic ?>" class="btn col-3" id="delete_button">Excluir Tópico</a>
             </div>
             <br>
             <div>
@@ -49,9 +49,9 @@
         </div>
         <br>
             <div id="comment">
-                <form action="CommentPost.php" METHOD="POST">
+                <form action="CommentTopic.php" METHOD="POST">
                     <div class="row">
-                        <input type="text" hidden name="postId" value="<?php echo $idPost ?>">
+                        <input type="text" hidden name="postId" value="<?php echo $idTopic ?>">
                         <input type="text" class="col-8" placeholder="Atenção ao português" id="comment_space" name="comment" required>
                         <input type="submit" class="col-4" id="comment_button" value="Comentar">
                     </div>
