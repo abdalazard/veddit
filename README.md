@@ -33,7 +33,6 @@ Objetivos:
   - Mudar a distribuição dos arquivos de estilo.
   - Refatorar o estilo.
   - Limpar os espaços desnecessário e pensar em uma forma de deixar o código mais legível.
-  - Ligar o tópico com o responsável pela postagem.
   - Renomear alguns nomes de arquivos e suas rotas.
   - Implementar o sistema de exclusão de tópicos/posts.
   
