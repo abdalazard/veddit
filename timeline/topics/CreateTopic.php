@@ -9,10 +9,10 @@ $content = $_POST['content'];
 $sql = "INSERT INTO Topics VALUES(null, '".$idUser."', null, '".$title."', '".$content."', 0, 0, null)";
 $result = mysqli_query($conn, $sql);
 
-$msg = "Seu tópico foi criado! :D";
+$msg = "<b style='color:green;'>Seu tópico foi criado! :D</b>";
 
 if(! $result) {
-    $msg = "Alguma coisa deu errado na publicação do seu tópico. :(";
+    $msg = "<b style='color:red;'>Alguma coisa deu errado na publicação do seu tópico. :(</b>";
 }
 
 header("location:../timeline.php?msg=".$msg);

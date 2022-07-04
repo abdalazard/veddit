@@ -61,6 +61,9 @@ $result = mysqli_query($conn, $sql);
                 <form action="/timeline/topics/open_topic.php" METHOD="GET">
                 <?php
                     $num = mysqli_num_rows($result);
+                    if($num == 0) {
+                        echo "<p style='text-align:center;'>Não existem tópicos disponíveis. </p>";
+                    }
                     for ($i = 1; $i <= $num; $i++) {
                         $dados = mysqli_fetch_array($result);
                 ?>

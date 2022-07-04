@@ -40,7 +40,7 @@
         <h1><?php echo $dados['title'] ?></h1>        
         <div id="post">            
             <div style="display: flex; justify-content: flex-end;">
-                <a href="delete_topic.php?idTopic=<?php echo $idTopic ?>" class="btn col-3" id="delete_button">Excluir Tópico</a>
+                <a href="DeleteTopic.php?idTopic=<?php echo $idTopic ?>" class="btn col-1" id="delete_button"><i class="bi bi-trash3"></i></a>
             </div>
             <br>
             <div>
