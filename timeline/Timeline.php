@@ -17,10 +17,9 @@ $result = mysqli_query($conn, $sql);
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <link rel="shortcut icon" href="../images/veddit-logo.png">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
+    <link href="/timeline/style/style.css" rel="stylesheet">
     <title>Feed</title>
-    <link href="style/style.css" rel="stylesheet">
 </head>
-
 <body>
     <nav class="navbar bg-light">
         <div class="container-fluid">
@@ -40,18 +39,18 @@ $result = mysqli_query($conn, $sql);
         <br>
         <div>
             <form action="../timeline/posts/create_post.php" METHOD="GET">
-                <div class="row">
-                    <input type="text" name="title" class="col-8" id="titlespace" placeholder="Crie um tópico">
-                    <input type="submit" class="btn col-4" id="button" value="Publicar">
+                <div class="row" style="text-align:center">
+                        <input type="text" name="title" class="col-9" placeholder="Crie um tópico">
+                    <div class="col-3">
+                        <input type="submit" class="btn col-12" id="button" value="Publicar">
+                    </div>
                 </div>
             </form>
         </div>
         <br>
-
-        <?php if (isset($_GET["msg"])) {
-        ?>
-            <div>
-                <p style="text-align:center;"><?php echo $_GET['msg'] ?></p>
+        <?php if (isset($_GET["msg"])) { ?>
+            <div style="text-align:center;">
+                <p><?php echo $_GET['msg'] ?></p>
             </div>
         <?php } ?>
 
@@ -81,9 +80,7 @@ $result = mysqli_query($conn, $sql);
             ?>
         </div>
     </div>
-
     <footer><b>Veddit</b> &copy Todos os direitos reservados 2022</footer>
-
 </body>
 
 </html>
