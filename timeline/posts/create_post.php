@@ -11,7 +11,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <link rel="shortcut icon" href="../images/veddit-logo.png" >
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
-    <title>Feed</title>
+    <title>Criador de tópico</title>
     <link href="/timeline/posts/style/style.css" rel="stylesheet">
 </head>
 <body>
@@ -28,19 +28,19 @@
         </div>
     </nav>
     <div class="container p-3 mb-2 bg-light text-dark" id="panel">
-    <div>
-        <h1 id="titleTopic" style="text-align:center; font-size:50px;"><?php echo $title ?></h1>
-    </div>
-    <form action="CreatePost.php" METHOD="POST">
-        <div id="row">
-            <input type="text" hidden name="title" value="<?php echo $title ?>">
-            <input type="text" hidden name="idUser" value="<?php echo $_SESSION['idUser'] ?>">
-            <textarea name="content" id="content" rows="10" maxlength="255" class="col-12"></textarea>
+        <div>
+            <h1 id="titleTopic" style="text-align:center; font-size:50px;"><?php echo $title ?></h1>
         </div>
-        <div >
-            <input type="submit" class="btn col-4" id="button" value="Publicar">
-        </div>
-    </form>
+        <form action="CreatePost.php" METHOD="POST">
+            <div id="row">
+                <input type="text" hidden name="title" value="<?php echo $title ?>">
+                <input type="text" hidden name="idUser" value="<?php echo $_SESSION['idUser'] ?>">
+                <textarea name="content" id="content" rows="10" maxlength="255" class="col-12"></textarea>
+            </div>
+            <div >
+                <input type="submit" class="btn col-4" id="button" value="Publicar">
+            </div>
+        </form>
     </div>
     <footer><b>Veddit</b> &copy Todos os direitos reservados 2022</footer>
 </body>

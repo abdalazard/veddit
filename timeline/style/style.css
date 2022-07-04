@@ -1,77 +1,77 @@
-        #logo {
-            width: 70px;
-            height: 80px;
-        }
-        #logo-login-panel {
-            width: 100px;
-            height: 110px;
-            display: block;
-            margin: 0px auto;
-        }
-        #title {
-            color:coral;
-        }
-        #panel {
-            padding: 60px 60px 60px 60px;
-            margin-top: 30px;
-            border-radius: 10px;            
-        }        
+#logo {
+    width: 70px;
+    height: 80px;
+}
+#logo-login-panel {
+    width: 100px;
+    height: 110px;
+    display: block;
+    margin: 0px auto;
+}
+#title {
+    color:coral;
+}
+#panel {
+    padding: 60px 60px 60px 60px;
+    margin-top: 30px;
+    border-radius: 10px;            
+}        
 
-        #button {
-            background-color:coral;
-            margin-top: 10px;
-            color: white;
-        }
-        #sem-sublinhado {
-            text-decoration: none;
-        }
-        footer {
-            text-align:center;
-            color:coral;
-            font-size: small;
-        }
-        h1 {
-            text-align:center;
-        }
-        #logout {
-            color:white;
-            background-color: red;
-            margin-right:30px;
-        }
-        #feed{            
-            background-color:white;
-            padding: 20px 5px 20px 5px;
-        }
-        #topic{
-            padding: 5px 5px 5px 5px;
-            border: 2px;
-            border-radius: 7px;
-            border-style: solid;
-            border-color: lightgrey;
-            margin-bottom: 20px;            
-        }
-        #titleTopic {
-            font-size: large;
-            text-align:start;
-            opacity: 70%;
-            color:grey;
-        }
-        /* #tag {
-            text-align:center;
-            font-size: small;
-            margin:auto;
-        }
-        #linkTag {
-            color:black;
-            text-decoration: none;
-            background: white;
-            border-style: groove;
-            width: auto;
-            padding: 2px;
-            border: 1px solid groove;
-            margin: 2px;
-            margin-left: 15px;
-        } */
-        #msg {
-            text-align:center;
-        }    
+#button {
+    background-color:coral;
+    margin-top: 10px;
+    color: white;
+}
+#sem-sublinhado {
+    text-decoration: none;
+}
+footer {
+    text-align:center;
+    color:coral;
+    font-size: small;
+}
+h1 {
+    text-align:center;
+}
+#logout {
+    color:white;
+    background-color: red;
+    margin-right:30px;
+}
+#feed{            
+    background-color:white;
+    padding: 20px 5px 20px 5px;
+}
+#topic{
+    padding: 5px 5px 5px 5px;
+    border: 2px;
+    border-radius: 7px;
+    border-style: solid;
+    border-color: lightgrey;
+    margin-bottom: 20px;            
+}
+#titleTopic {
+    font-size: large;
+    text-align:start;
+    opacity: 70%;
+    color:grey;
+}
+/* #tag {
+    text-align:center;
+    font-size: small;
+    margin:auto;
+}
+#linkTag {
+    color:black;
+    text-decoration: none;
+    background: white;
+    border-style: groove;
+    width: auto;
+    padding: 2px;
+    border: 1px solid groove;
+    margin: 2px;
+    margin-left: 15px;
+} */
+#msg {
+    text-align:center;
+}    
