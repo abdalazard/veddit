@@ -34,7 +34,7 @@
             <h1>Bem-vindo ao Veddit</h1>
             <br>
                 <div class="row">
-                    <a type="button" id="button" class="btn col-8" href="login/Login.php">Logar</a>
+                    <a type="button" id="button" class="btn col-8" href="login/login.php">Logar</a>
                 </div>
                 <br>
                 <div class="row">
