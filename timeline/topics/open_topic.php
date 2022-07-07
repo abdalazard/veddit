@@ -8,9 +8,8 @@
     $topicResult = mysqli_query($conn, $sql);
     $topicData = mysqli_fetch_array($topicResult);  
 
-    $commentSql = "SELECT content FROM Comments WHERE topic_id LIKE  '".$idTopic."'";
+    $commentSql = "SELECT * FROM Comments";
     $commentResult = mysqli_query($conn, $commentSql);
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -69,13 +68,20 @@
                 $num = mysqli_num_rows($commentResult);
                 if($num == 0) {
                     echo "<p style='text-align:center;'>Sem comentários. </p>";
-                for ($i = 1; $i <= $num; $i++) {
-                    $commentData = mysqli_fetch_array($commentResult);
-            ?>
+                }else {
+                    for ($i = 1; $i <= $num; $i++) {
+                        $commentData = mysqli_fetch_array($commentResult);            
+
+         ?>
         <div>
-        <p><?php echo $commentData['content'];
-            }}}?></p>
+            <label style="color: grey; font-size: 11px;"> User <?php echo $commentData['user_id']; ?></label>
+            <p style='text-align:start;'>
+                <?php echo $commentData['content']; ?>
+            </p>
         </div>
+            <?php } 
+                }
+            }?>
     </div>
     <footer><b>Veddit</b> &copy Todos os direitos reservados 2022</footer>
 </body>
