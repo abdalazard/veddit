@@ -5,9 +5,12 @@
     $idTopic = $_GET['idTopic'];
 
     $sql = "SELECT * FROM Topics WHERE id LIKE '".$idTopic."'";
-    $result = mysqli_query($conn, $sql);
+    $topicResult = mysqli_query($conn, $sql);
+    $topicData = mysqli_fetch_array($topicResult);  
 
-    $dados = mysqli_fetch_array($result);    
+    $commentSql = "SELECT content FROM Comments WHERE topic_id LIKE  '".$idTopic."'";
+    $commentResult = mysqli_query($conn, $commentSql);
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -37,26 +40,42 @@
     </nav>
     <div class="container p-3 mb-2 bg-light text-dark" id="panel">
         <img src="/images/veddit-logo.png" id="logo-login-panel" alt="VEDDIT">
-        <h1><?php echo $dados['title'] ?></h1>        
+        <h1><?php echo $topicData['title'] ?></h1>        
         <div id="post">            
             <div style="display: flex; justify-content: flex-end;">
                 <a href="DeleteTopic.php?idTopic=<?php echo $idTopic ?>" class="btn col-1" id="delete_button"><i class="bi bi-trash3"></i></a>
             </div>
             <br>
             <div>
-                <p><?php echo $dados['content'] ?></p>
+                <p><?php echo $topicData['content'] ?></p>
             </div>
         </div>
         <br>
-            <div id="comment">
-                <form action="CommentTopic.php" METHOD="POST">
-                    <div class="row">
-                        <input type="text" hidden name="postId" value="<?php echo $idTopic ?>">
-                        <input type="text" class="col-8" placeholder="Atenção ao português" id="comment_space" name="comment" required>
-                        <input type="submit" class="col-4" id="comment_button" value="Comentar">
-                    </div>
-                </form>
-            </div>
+        <div id="comment">
+            <form action="CommentTopic.php" METHOD="POST">
+                <div class="row">
+                    <input type="text" hidden name="postId" value="<?php echo $idTopic; ?>">
+                    <input type="text" class="col-8" placeholder="Atenção ao português" id="comment_space" name="comment" required>
+                    <input type="submit" class="col-4" id="comment_button" value="Comentar">
+                </div>
+            </form>
+        </div>
+        <br>
+        <div>
+            <h4>Comentários:</h4>
+        </div>
+        <?php
+            if($commentResult) {
+                $num = mysqli_num_rows($commentResult);
+                if($num == 0) {
+                    echo "<p style='text-align:center;'>Sem comentários. </p>";
+                for ($i = 1; $i <= $num; $i++) {
+                    $commentData = mysqli_fetch_array($commentResult);
+            ?>
+        <div>
+        <p><?php echo $commentData['content'];
+            }}}?></p>
+        </div>
     </div>
     <footer><b>Veddit</b> &copy Todos os direitos reservados 2022</footer>
 </body>

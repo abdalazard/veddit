@@ -40,7 +40,7 @@ $result = mysqli_query($conn, $sql);
         <div>
             <form action="../timeline/topics/create_topic.php" METHOD="GET">
                 <div class="row" style="text-align:center">
-                        <input type="text" name="title" class="col-9" placeholder="Crie um tópico">
+                        <input type="text" name="title" class="col-9" placeholder="Crie um tópico" required>
                     <div class="col-3">
                         <input type="submit" class="btn col-12" id="button" value="Publicar">
                     </div>
