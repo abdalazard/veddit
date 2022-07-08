@@ -36,7 +36,6 @@ CREATE TABLE Topics (
 
 INSERT INTO Topics VALUES ( null, 1, 1, "Titulo teste", "blablalbalba", 1, 2, "teste");
 
-
 CREATE TABLE Comments (
     id int primary key auto_increment,
     content varchar(140),
