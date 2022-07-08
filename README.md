@@ -26,14 +26,12 @@ Projeto baseado nas funcionalidades do Reddit. Usado para cursos e explicações
 
 12ª Atualização: Conclui o posicionamento de alguns butões na abertura/visualização de um tópico. Corrigi também alguns nomes de páginas que foram copiados não substituídos e desenvolvi um sistema de pastas para style mais compreensivel e organizado. Ainda planejo refatorar os arquivos de estilo, renomea-los e pensar em uma forma melhor de distribuir os estilos.
   
+13ª Atualização: Atualiza banco de dados, inserindo chaves estrangeiras que serão utilizadas no futuro.
+
 WIP
 
 Objetivos:
   
   - Mudar a distribuição dos arquivos de estilo.
   - Refatorar o estilo.
-  - Limpar os espaços desnecessário e pensar em uma forma de deixar o código mais legível.
-  - Renomear alguns nomes de arquivos e suas rotas.
-  - Implementar o sistema de exclusão de tópicos/posts.
-  
-  
+  - Limpar os espaços desnecessário e pensar em uma forma de deixar o código mais legível.  

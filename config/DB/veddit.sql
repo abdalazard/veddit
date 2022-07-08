@@ -15,7 +15,7 @@ insert into Users values(null,"ADM","abdalazard@gmail.com",md5("123"),"1");
 CREATE TABLE Groups (
     id int primary key auto_increment,
     theme_id int,
-    creator_id int,   
+    creator_id int,
     FOREIGN KEY (creator_id) REFERENCES Users(id),
 );
 
@@ -35,7 +35,6 @@ CREATE TABLE Topics (
 );
 
 INSERT INTO Topics VALUES ( null, 1, 1, "Titulo teste", "blablalbalba", 1, 2, "teste");
-
 
 CREATE TABLE Comments (
     id int primary key auto_increment,
