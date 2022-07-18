@@ -9,7 +9,12 @@
     $topicData = mysqli_fetch_array($topicResult);  
 
 
-    $commentSql = "SELECT Comments.content, Comments.user_id, Users.name FROM Comments JOIN users WHERE topic_id LIKE '".$idTopic."'";
+    $commentSql = "SELECT comments.id, comments.content, comments.user_id, users.name 
+                    FROM comments 
+                    JOIN users 
+                    ON comments.user_id = users.id 
+                    WHERE topic_id LIKE '".$topicData['id']."'";
+
     $commentResult = mysqli_query($conn, $commentSql);
 ?>
 <!DOCTYPE html>
@@ -76,10 +81,16 @@
 
          ?>
         <div>
-            <label style="color: grey; font-size: 11px;"> <?php echo $commentData['name']; ?></label>
-            <p style='text-align:start;'>
-                <?php echo $commentData['content']; ?>
-            </p>
+            <div>
+                <label style="color: grey; font-size: 11px;"> <?php echo $commentData['name']; ?></label>
+
+                <p style='text-align:start;'>
+                    <?php echo $commentData['content']; ?>
+                </p>
+
+                <a href="DeleteComment.php?idComment=<?php echo $commentData['id']; ?>" class="btn end">Excluir</a>
+            </div>
+            
         </div>
             <?php } 
                 }
