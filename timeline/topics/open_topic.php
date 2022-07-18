@@ -8,7 +8,8 @@
     $topicResult = mysqli_query($conn, $sql);
     $topicData = mysqli_fetch_array($topicResult);  
 
-    $commentSql = "SELECT * FROM Comments";
+
+    $commentSql = "SELECT Comments.content, Comments.user_id, Users.name FROM Comments JOIN users WHERE topic_id LIKE '".$idTopic."'";
     $commentResult = mysqli_query($conn, $commentSql);
 ?>
 <!DOCTYPE html>
@@ -75,7 +76,7 @@
 
          ?>
         <div>
-            <label style="color: grey; font-size: 11px;"> User <?php echo $commentData['user_id']; ?></label>
+            <label style="color: grey; font-size: 11px;"> <?php echo $commentData['name']; ?></label>
             <p style='text-align:start;'>
                 <?php echo $commentData['content']; ?>
             </p>
