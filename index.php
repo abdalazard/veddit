@@ -49,7 +49,6 @@
             }
         ?>
     </p>
-    <footer><b>Veddit</b> &copy Todos os direitos reservados 2022</footer>
-    
+    <footer><b>Veddit</b> &copy Todos os direitos reservados 2022</footer>    
 </body>
 </html>

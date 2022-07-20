@@ -6,9 +6,13 @@
 
     $sql = "SELECT * FROM Topics WHERE id LIKE '".$idTopic."'";
     $topicResult = mysqli_query($conn, $sql);
-    $topicData = mysqli_fetch_array($topicResult);  
+    $topicData = mysqli_fetch_array($topicResult);
 
-    $commentSql = "SELECT * FROM Comments";
+    $commentSql = "SELECT comments.id, comments.content, comments.user_id, users.name 
+                    FROM comments 
+                    JOIN users 
+                    ON comments.user_id = users.id 
+                    WHERE topic_id LIKE '".$topicData['id']."'";
     $commentResult = mysqli_query($conn, $commentSql);
 ?>
 <!DOCTYPE html>
@@ -64,6 +68,13 @@
         <div>
             <h4>Comentários:</h4>
         </div>
+        <div>
+            <?php if (isset($_GET["msg"])) { ?>
+                <div style="text-align:center; font-size:small;">
+                    <p><?php echo $_GET['msg'] ?></p>
+                </div>
+            <?php } ?>
+        </div>
         <?php
             if($commentResult) {
                 $num = mysqli_num_rows($commentResult);
@@ -71,19 +82,26 @@
                     echo "<p style='text-align:center;'>Sem comentários. </p>";
                 }else {
                     for ($i = 1; $i <= $num; $i++) {
-                        $commentData = mysqli_fetch_array($commentResult);            
-
-         ?>
-        <div>
-            <label style="color: grey; font-size: 11px;"> User <?php echo $commentData['user_id']; ?></label>
-            <p style='text-align:start;'>
-                <?php echo $commentData['content']; ?>
-            </p>
-        </div>
-            <?php } 
+                        $commentData = mysqli_fetch_array($commentResult);
+        ?>
+        <div class="row">
+             <div>
+                <div class="row">
+                    <h6 style="color: grey; font-size: 11px;"> <?php echo $commentData['name']; ?>
+                       | <a href="DeleteComment.php?idComment=<?php echo $commentData['id']."&topicId=$idTopic"; ?>">Excluir</a>
+                    </h6>
+                </div>
+                
+                <p style='text-align:start; font-size:small;'>
+                    <?php echo $commentData['content']; ?>
+                </p>           
+            </div>
+            <?php 
+                    } 
                 }
-            }?>
-    </div>
+            }
+            ?>
+        </div>
     <footer><b>Veddit</b> &copy Todos os direitos reservados 2022</footer>
 </body>
 </html>
