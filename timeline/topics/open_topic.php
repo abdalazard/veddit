@@ -68,6 +68,13 @@
         <div>
             <h4>Comentários:</h4>
         </div>
+        <div>
+            <?php if (isset($_GET["msg"])) { ?>
+                <div style="text-align:center; font-size:small;">
+                    <p><?php echo $_GET['msg'] ?></p>
+                </div>
+            <?php } ?>
+        </div>
         <?php
             if($commentResult) {
                 $num = mysqli_num_rows($commentResult);
@@ -79,13 +86,15 @@
         ?>
         <div class="row">
              <div>
-                <label style="color: grey; font-size: 11px;"> <?php echo $commentData['name']; ?></label>
-                <p style='text-align:start;'>
+                <div class="row">
+                    <h6 style="color: grey; font-size: 11px;"> <?php echo $commentData['name']; ?>
+                       | <a href="DeleteComment.php?idComment=<?php echo $commentData['id']."&topicId=$idTopic"; ?>">Excluir</a>
+                    </h6>
+                </div>
+                
+                <p style='text-align:start; font-size:small;'>
                     <?php echo $commentData['content']; ?>
-                </p>
-                <div style="justify-content:flex-end;">
-                    <a type="button" id="deleteComment" class="btn" href="DeleteComment.php?idComment=<?php echo $commentData['id']; ?>"><i class="bi bi-x-square-fill"></i> <b>Excluir</b></a>
-                </div>                
+                </p>           
             </div>
             <?php 
                     } 
