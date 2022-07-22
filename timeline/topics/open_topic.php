@@ -14,6 +14,9 @@
                     ON comments.user_id = users.id 
                     WHERE topic_id LIKE '".$topicData['id']."'";
     $commentResult = mysqli_query($conn, $commentSql);
+
+    $profile = $_SESSION['profile'];
+    $idUser = $_SESSION['idUser'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -47,7 +50,9 @@
         <h1><?php echo $topicData['title'] ?></h1>        
         <div id="post">            
             <div style="display: flex; justify-content: flex-end;">
+            <?php if($profile == 1 or $idUser == $topicData["user_id"]) {?>
                 <a href="DeleteTopic.php?idTopic=<?php echo $idTopic ?>" class="btn col-1" id="delete_button"><i class="bi bi-trash3"></i></a>
+                <?php } ?>
             </div>
             <br>
             <div>
@@ -71,7 +76,7 @@
         <div>
             <?php if (isset($_GET["msg"])) { ?>
                 <div style="text-align:center; font-size:small;">
-                    <p><?php echo $_GET['msg'] ?></p>
+                    <p><?php echo $_GET['msg']; ?></p>
                 </div>
             <?php } ?>
         </div>
@@ -88,7 +93,9 @@
              <div>
                 <div class="row">
                     <h6 style="color: grey; font-size: 11px;"> <?php echo $commentData['name']; ?>
+                    <?php if($profile == 1 or $idUser == $commentData['user_id']) {?>
                        | <a href="DeleteComment.php?idComment=<?php echo $commentData['id']."&topicId=$idTopic"; ?>">Excluir</a>
+                     <?php } ?>
                     </h6>
                 </div>
                 
