@@ -14,12 +14,12 @@ insert into Users values(null,"ADM","abdalazard@gmail.com",md5("123"),"1");
 
 CREATE TABLE Groups (
     id int primary key auto_increment,
-    theme_id int,
-    creator_id int,
-    FOREIGN KEY (creator_id) REFERENCES Users(id),
+    theme varchar(20),
+    creator_id INT(3),
+    FOREIGN KEY (creator_id) REFERENCES Users(id)
 );
 
-INSERT INTO Groups VALUES(null, 1, 1);
+INSERT INTO Groups VALUES(null, Desabafo, 1);
 
 CREATE TABLE Topics (
     id int primary key auto_increment,

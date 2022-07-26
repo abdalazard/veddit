@@ -55,22 +55,12 @@ h1 {
     text-align:start;
     opacity: 70%;
 }
-/* #tag {
+.tag {
     text-align:center;
     font-size: small;
-    margin:auto;
+    background-color: white;
+    padding: auto;
 }
-#linkTag {
-    color:black;
-    text-decoration: none;
-    background: white;
-    border-style: groove;
-    width: auto;
-    padding: 2px;
-    border: 1px solid groove;
-    margin: 2px;
-    margin-left: 15px;
-} */
 textarea {
     resize: none;
 }
