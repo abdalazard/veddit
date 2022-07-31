@@ -22,6 +22,6 @@
             header("location:Register.php?msg=".$msg);
         }
         $msg = "Usuário cadastrado com sucesso!";
-        header("location:../login/Login.php?msg=".$msg);
+        header("location:../login/login.php?msg=".$msg);
     }
 ?>
