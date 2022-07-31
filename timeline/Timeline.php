@@ -1,15 +1,16 @@
 <?php
-include '../config/Autentication.php';
-include '../config/connection.php';
+    include '../config/Autentication.php';
+    include '../config/connection.php';
 
-$sql = "SELECT * FROM Topics ORDER BY id DESC";
-$result = mysqli_query($conn, $sql);
+    $sql = "SELECT * FROM Topics ORDER BY id DESC";
+    $result = mysqli_query($conn, $sql);
 
+    $sqlGroup = "SELECT * FROM Groups LIMIT 5";
+    $resultGroups = mysqli_query($conn, $sqlGroup);
 
 ?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -46,6 +47,20 @@ $result = mysqli_query($conn, $sql);
                     </div>
                 </div>
             </form>
+        </div>
+        <br>
+        <div class="groups row">
+            <?php 
+                $qtdGroup = mysqli_num_rows($resultGroups);
+                for ($i = 1; $i <= $qtdGroup; $i++) {
+                $groups = mysqli_fetch_array($resultGroups);
+            ?>
+            <div class="tag col-2">
+                <a href="#" ></a><?php echo $groups["theme"]; ?></a>                        
+            </div>
+            <?php
+                }
+            ?>                
         </div>
         <br>
         <?php if (isset($_GET["msg"])) { ?>
