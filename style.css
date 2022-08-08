@@ -1,57 +1,158 @@
-#logo {
-    width: 70px;
-    height: 80px;
-}
-#sem-sublinhado {
-    text-decoration: none;
-}
-h1 {
-    text-align:center;
-}       
-#panel {
-    border-radius: 10px;
-    display: block;
-    margin: 0px auto;
-    width: fit-content;
+/*
+ * Variáveis
+ * =========
+ */
 
+:root {
+  --color-primary: hsl(16, 100%, 50%);
+  --color-primary-light: hsl(16, 100%, 75%);
+
+  --color-primary-bg: hsl(16, 100%, 58%);
+  --color-primary-bg-hover: var(--color-primary);
+  --color-primary-fg: hsl(0, 0%, 100%);
 }
-#logo-login-panel {
-    width: 100px;
-    height: 110px;
-    display: block;
-    margin: 0px auto;
+
+/*
+ * Estilos base
+ * ============
+ */
+
+/* Elementos */
+* {
+  box-sizing: border-box;
 }
-#title {
-    color: coral;
-}        
-#button {
-    background-color:coral;
-    display:block;
-    margin-top: 10px;
-    color: white;
-    display: block;
-    margin: 0px auto;
+
+body {
+  font-family: 'Nunito', sans-serif;
+  background-color: #DAE0E6;
+  margin: 0;
 }
-#button-group {
-    padding: 30px 15px 15px 30px;
-    background-color: white;
-    border-radius: 10px;
-    display: block;
-    margin: 0px auto;
-    width: fit-content;
+
+a {
+  color: var(--color-primary-bg);
+  text-decoration: none;
 }
-#sem-sublinhado {
-    text-decoration: none;
+
+a:hover {
+  color: var(--color-primary-bg-hover);
+  text-decoration: none;
 }
-p {
-    text-align:center;
-    color:red;
+
+
+/* Texto */
+.text-xs {
+  font-size: 0.75rem; /* 12px */
+  line-height: 1rem; /* 16px */
 }
-footer {
-    text-align:center;
-    color:coral;
-    font-size: small;
+
+.text-sm {
+  font-size: 0.875rem; /* 14px */
+  line-height: 1.25rem; /* 20px */
 }
-#msg {
-    text-align: center;
+
+.text-base {
+  font-size: 1rem; /* 16px */
+  line-height: 1.5rem; /* 24px */
+}
+
+.text-lg {
+  font-size: 1.125rem; /* 18px */
+  line-height: 1.75rem; /* 28px */
+}
+
+.text-xl {
+  font-size: 1.25rem; /* 20px */
+  line-height: 1.75rem; /* 28px */
+}
+
+.text-2xl {
+  font-size: 1.5rem; /* 24px */
+  line-height: 2rem; /* 32px */
+}
+
+.card {
+  background-color: white;
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.1);
+}
+
+/* Formulários */
+
+/* input, button {
+  display: block;
+} */
+
+.input {
+  border: 1px solid #C4C4C4;
+  border-radius: 8px;
+  padding: 12px 10px;
+  width: 100%;
+  margin-bottom: 22px;
+  transition: border-color ease .2s;
+}
+
+.input:focus {
+  outline: none;
+  border: 1px solid var(--color-primary);
+}
+
+.label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.btn {
+  display: block;
+  width: 100%;
+  padding: 10px 10px;
+  border: none;
+  border-radius: 100px;
+  margin-bottom: 16px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 18px;
+  text-align: center;
+  transition: background-color ease .2s;
+}
+
+.btn-primary {
+  background-color: var(--color-primary-bg);
+  color: var(--color-primary-fg);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-primary);
+}
+
+.btn-secondary {
+  border: 1px solid var(--color-primary-bg);
+  color: var(--color-primary);
+  background-color: transparent;
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-primary-bg-hover);
+  color: var(--color-primary-fg);
+}
+
+/*
+ * TELAS
+ * =====
+*/
+
+/* Login */
+
+.page-auth {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+.card-auth {
+  padding: 28px;
+  width: 100%;
+  max-width: 400px;
+  margin: auto 0;
 }
