@@ -11,7 +11,7 @@
     if(mysqli_num_rows($search) > 0){
         mysqli_close($conn);
         $msg = 'Este usuário já existe';
-        header("location:Register.php?msg=".$msg);
+        header("location:register.php?msg=".$msg);
     }
     else {
         $sql = "INSERT INTO users VALUES(null, '".$name."', '".$email."','".$password."', '2')";
@@ -19,9 +19,9 @@
         if(!$result){
             mysqli_close($conn);
             $msg = "Algum problema foi identificado ao tentar cadastrar este usuário./n Por favor, entre em contato com o suporte.";    
-            header("location:Register.php?msg=".$msg);
+            header("location:register.php?msg=".$msg);
         }
         $msg = "Usuário cadastrado com sucesso!";
-        header("location:../login/login.php?msg=".$msg);
+        header("location:../index.php?msg=".$msg);
     }
 ?>
