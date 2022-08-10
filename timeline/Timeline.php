@@ -1,6 +1,6 @@
 <?php
     include '../config/Autentication.php';
-    include '../config/connection.php';
+    include "../config/DB_DB_Connection.php";
 
     $sql = "SELECT * FROM Topics ORDER BY id DESC";
     $result = mysqli_query($conn, $sql);
