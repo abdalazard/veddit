@@ -1,7 +1,7 @@
 <?php
     include "../config/DB_DB_Connection.php";
 
-    $name = $_POST['name'];
+    $name = $_POST['user'];
     $email = $_POST['email'];
     $password = md5($_POST['password']);
     // $profile = 2;
