@@ -58,7 +58,7 @@
         <button class="btn btn-primary mb-4">Entrar</button>
         
         <div class="text-muted text-center mb-1">É novo por aqui?</div>
-        <a href="register/register.html" class="btn btn-secondary">Cadastre-se</a>
+        <a href="register/register.php" class="btn btn-secondary">Cadastre-se</a>
       </form>
     </div>
   </div>
