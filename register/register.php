@@ -16,7 +16,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap-grid.min.css" rel="stylesheet" crossorigin="anonymous">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap-utilities.min.css" rel="stylesheet" crossorigin="anonymous">
 
-  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="../style.css">
 </head>
 <body>
   <div class="page-auth">
@@ -36,15 +36,15 @@
 
       <div class="text-2xl text-center mb-3">Crie sua conta</div>
 
-      <form action="/CreateUser.php" METHOD="POST">
+      <form action="CreateUser.php" METHOD="POST">
         <label class="label" for="">Nome de usuário:</label>
-        <input class="input" type="text">
+        <input class="input" type="text" name="user">
 
         <label class="label" for="">Email:</label>
-        <input class="input" type="text">
+        <input class="input" type="text" name="email">
 
         <label class="label" for="">Senha:</label>
-        <input class="input" type="text">
+        <input class="input" type="password" name="password">
 
         <button class="btn btn-primary mb-4">Criar conta</button>
         
