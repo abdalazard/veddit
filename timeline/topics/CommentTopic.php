@@ -1,6 +1,6 @@
 <?php
 include '../../config/Autentication.php';
-include "../config/DB_DB_Connection.php";
+include "../config/DB_Connection.php";
 
 $TopicId = $_POST["postId"];
 $comment = $_POST["comment"];
