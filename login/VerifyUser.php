@@ -25,6 +25,6 @@ if(!strcmp($password, $dados['password'] )) {
     $_SESSION['password'] = $dados['password'];
     $_SESSION['profile'] = $dados['profile'];
 
-    header("location:../timeline/Timeline.php");
+    header("location:../timeline/timeline.php");
 }
 ?>
