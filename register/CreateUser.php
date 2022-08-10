@@ -5,7 +5,7 @@
     $email = $_POST['email'];
     $password = md5($_POST['password']);
     // $profile = 2;
-    $email_verify = "SELECT * FROM users WHERE email LIKE '".$email."'";
+    $email_verify = "SELECT * FROM Users WHERE email LIKE '".$email."'";
     $search = mysqli_query($conn, $email_verify);
 
     if(mysqli_num_rows($search) > 0){
@@ -14,7 +14,7 @@
         header("location:register.php?msg=".$msg);
     }
     else {
-        $sql = "INSERT INTO users VALUES(null, '".$name."', '".$email."','".$password."', '2')";
+        $sql = "INSERT INTO Users VALUES(null, '".$name."', '".$email."','".$password."', '2')";
         $result = mysqli_query($conn, $sql);
         if(!$result){
             mysqli_close($conn);
