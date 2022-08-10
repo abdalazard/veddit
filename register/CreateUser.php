@@ -1,5 +1,5 @@
 <?php
-    include "../config/Connection.php";
+    include "../config/DB_Connection.php";
 
     $name = $_POST['name'];
     $email = $_POST['email'];

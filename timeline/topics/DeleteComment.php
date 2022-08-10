@@ -1,6 +1,6 @@
 <?php
 include '../../config/Autentication.php';
-include '../../config/connection.php';
+include '../../config/DB_Connection.php';
 
 $commentId = $_GET['idComment'];
 $topicId = $_GET['topicId'];

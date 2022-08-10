@@ -1,6 +1,6 @@
 <?php
 include '../../config/Autentication.php';
-include '../../config/connection.php';
+include '../../config/DB_Connection.php';
 
 $title = $_POST['title'];
 $idUser = $_POST['idUser'];
