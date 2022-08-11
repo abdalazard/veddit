@@ -8,10 +8,10 @@
     $topicResult = mysqli_query($conn, $sql);
     $topicData = mysqli_fetch_array($topicResult);
 
-    $commentSql = "SELECT comments.id, comments.content, comments.user_id, users.name 
-                    FROM comments 
-                    JOIN users 
-                    ON comments.user_id = users.id 
+    $commentSql = "SELECT Comments.id, Comments.content, Comments.user_id, Users.name 
+                    FROM Comments 
+                    JOIN Users 
+                    ON Comments.user_id = Users.id 
                     WHERE topic_id LIKE '".$topicData['id']."'";
     $commentResult = mysqli_query($conn, $commentSql);
 
