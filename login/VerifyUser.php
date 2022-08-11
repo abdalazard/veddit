@@ -6,7 +6,7 @@ $email = $_POST['email'];
 $password = MD5($_POST['password']);
 
 
-$sql = "SELECT * FROM Users WHERE email LIKE '".$email."' AND password LIKE '".$password."'";
+$sql = "SELECT * FROM users WHERE email LIKE '".$email."' AND password LIKE '".$password."'";
 $result = mysqli_query($conn, $sql);
 $total = mysqli_num_rows($result);
 
