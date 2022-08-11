@@ -13,12 +13,10 @@
         $msg = 'Este usuário já existe';
         header("location:register.php?msg=".$msg);
     }
-    mysqli_close($conn);
-
     $sql = "INSERT INTO Users VALUES(null, '".$name."', '".$email."','".$password."', '2')";
     $result = mysqli_query($conn, $sql);
 
-    if(!$result){
+    if(! $result){
         mysqli_close($conn);
         $msg = "Algum problema foi identificado ao tentar cadastrar este usuário./n Por favor, entre em contato com o suporte.";    
         header("location:register.php?msg=".$msg);
