@@ -23,5 +23,4 @@
     }
     $msg = "Usuário cadastrado com sucesso!";
     header("location:../index.php?msg=".$msg);
-    
 ?>
