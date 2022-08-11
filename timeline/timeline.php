@@ -35,7 +35,7 @@
         </div>
     </nav>
     <div class="container p-3 mb-2 bg-light text-dark" id="panel">
-        <img src="../images/veddit-logo.png" id="logo-login-panel" alt="VEDDIT">
+        <img src="../img//logo.svg"" id="logo-login-panel" alt="VEDDIT">
         <h1>Feed</h1>
         <br>
         <div>
