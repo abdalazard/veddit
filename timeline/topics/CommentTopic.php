@@ -6,7 +6,7 @@ $postId = $_POST["postId"];
 $comment = $_POST["comment"];
 $idUser = $_SESSION['idUser'];
 
-$sql = "INSERT INTO comments Values(NULL, '".$comment."', '".$idUser."', '".$postId."')";
+$sql = "INSERT INTO Comments Values(NULL, '".$comment."', '".$idUser."', '".$postId."')";
 
 $result = mysqli_query($conn,$sql);
 
