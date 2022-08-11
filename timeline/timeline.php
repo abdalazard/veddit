@@ -36,7 +36,7 @@
     </nav>
     <div class="container p-3 mb-2 bg-light text-dark" id="panel">
         <img src="../img//logo.svg"" id="logo-login-panel" alt="VEDDIT">
-        <h1>Feed</h1>
+        <h1>Teste</h1>
         <br>
         <div>
             <form action="../timeline/topics/create_topic.php" METHOD="GET">
