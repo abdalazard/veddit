@@ -19,7 +19,7 @@
         <div class="container-fluid">
             <div class="row">
                 <a href="/index.php" id="sem-sublinhado">
-                    <span id="title" class="navbar-brand"><img src="/images/veddit-logo.png" alt="VEDDIT" id="logo"><b>VEDDIT</b></span>
+                    <span id="title" class="navbar-brand"><img src="../../img//logo.svg" alt="VEDDIT" id="logo"> </span>
                 </a>   
             </div>
             <div class="flex-end">             
@@ -42,6 +42,6 @@
             </div>
         </form>
     </div>
-    <footer><b>Veddit</b> &copy Todos os direitos reservados 2022</footer>
+    <footer>  &copy Todos os direitos reservados 2022</footer>
 </body>
 </html>
