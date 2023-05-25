@@ -10,7 +10,7 @@ CREATE TABLE `Users` (
     `profile` enum("1", "0") NOT NULL
 );
 
-insert into Users values(null,"ADM","abdalazard@gmail.com",md5("Abdalazard.10"),"1");
+insert into Users values(null,"ADM","abdalazard@gmail.com",md5("123"),"1");
 
 CREATE TABLE `Groups` (
 	`id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
