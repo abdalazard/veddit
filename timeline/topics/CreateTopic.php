@@ -6,7 +6,7 @@ $title = $_POST['title'];
 $idUser = $_POST['idUser'];
 $content = $_POST['content'];
 
-$sql = "INSERT INTO Topics VALUES(null, '".$idUser."', null, '".$title."', '".$content."')";
+$sql = "INSERT INTO Topics VALUES(null, '".$title."', '".$content."', '".$idUser."', null)";
 $result = mysqli_query($conn, $sql);
 
 $msg = "<b style='color:green;'>Seu tópico foi criado! :D</b>";

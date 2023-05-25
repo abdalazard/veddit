@@ -2,17 +2,17 @@
 include '../../config/Autentication.php';
 include '../../config/DB_Connection.php';
 
-$postId = $_POST["postId"];
+$topicId = $_POST["postId"];
 $comment = $_POST["comment"];
-$userId = $_SESSION['idUser'];
+$creatorId = $_SESSION['idUser'];
 
-$sql = "INSERT INTO Comments Values(NULL, '".$comment."', '".$userId."', '".$postId."')";
+$sql = "INSERT INTO Comments Values(NULL, '".$comment."', '".$creatorId."', '".$topicId."')";
 
 $result = mysqli_query($conn,$sql);
 
 if(! $result) {
     $msg = "Erro ao comentar";
-    header("location:./open_topic.php?idTopic=".$postId."&msg=".$msg."");
+    header("location:./open_topic.php?idTopic=".$topicId."&msg=".$msg."");
 }
 
-header("location:./open_topic.php?idTopic=".$postId."");
+header("location:./open_topic.php?idTopic=".$topicId."");
