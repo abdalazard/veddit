@@ -55,12 +55,12 @@ try {
                     $num = mysqli_num_rows($resultThemes);
                     if ($num > 0) { ?>
                 <label>Selecione o tema: </a>
-                    <select name="theme">
+                    <select name="theme" required>
                         <?php while ($theme = mysqli_fetch_array($resultThemes)) { ?>
                         <option value="<?php echo $theme['id']; ?>"><?php echo $theme['theme']; ?></option>
                         <?php }
-                            }
-                        } ?>
+                        }
+                    } ?>
                     </select>
             </div>
             <div>

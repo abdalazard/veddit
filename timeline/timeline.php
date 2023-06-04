@@ -101,9 +101,16 @@ try {
                     ?>
                 <div id="topic" class="p-2 mb-1 bg-light text-dark">
                     <a href="../timeline/topics/open_topic.php?idTopic=<?php echo $dados['id'] ?>" id="sem-sublinhado">
-                        <p id="titleTopic">
-                            <?php echo $dados['title'] ?>
-                        </p>
+                        <div id="titleTopic">
+                            <p><?php echo $dados['title'] ?>
+                                <?php if ($_SESSION['profile'] == 1) { ?>
+                                <a href="../timeline/topics/DeleteTopic.php?idTopic=<?php echo $dados['id'] ?>"
+                                    class="btn col-1" id="delete_button"><i class="bi bi-trash3"></i></a>
+                                <?php } ?>
+                            </p>
+                        </div>
+
+
                     </a>
                 </div>
                 <?php
