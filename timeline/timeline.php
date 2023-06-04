@@ -67,7 +67,8 @@ try {
                     while ($themes = mysqli_fetch_array($resultThemes)) {
             ?>
             <div class="col-3">
-                <a href="#" type="button" class="btn"><?php echo $themes['theme']; ?></a>
+                <a href="topics/theme_list.php?id=<?php echo $themes['id'] ?>" type="button"
+                    class="btn"><?php echo $themes['theme']; ?></a>
             </div>
             <?php
                     }
