@@ -29,7 +29,9 @@ $result = mysqli_query($conn, $sql);
                 </a>
             </div>
             <div class="flex-end">
-                <a type="button" id="logout" class="btn" href="../../config/Logout.php" alt="Sair"><i class="bi bi-x-square-fill"></i> <b>Logout</b></a>
+                <a type="button" id="logout" class="btn" href="../config/Logout.php" alt="Sair">
+                    <strong>Logout</strong>
+                </a>
             </div>
         </div>
     </nav>
