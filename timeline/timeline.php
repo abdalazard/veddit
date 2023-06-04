@@ -1,17 +1,17 @@
 <?php
-    include '../config/Autentication.php';
-    include "../config/DB_Connection.php";
+include '../config/Autentication.php';
+include "../config/DB_Connection.php";
 
-    $sql = "SELECT * FROM Topics ORDER BY id DESC";
-    $result = mysqli_query($conn, $sql);
+$sql = "SELECT * FROM Topics ORDER BY id DESC";
+$result = mysqli_query($conn, $sql);
 
-    try { 
-        $sqlGroup = "SELECT * FROM themes";
-        $resultGroups = mysqli_query($conn, $sqlGroup);
-    } catch(mysqli_sql_exception $e) {
-        var_dump($e);
-        exit;
-    }
+try {
+    $sqlThemes = "SELECT * FROM themes";
+    $resultThemes = mysqli_query($conn, $sqlThemes);
+} catch (mysqli_sql_exception $e) {
+    var_dump($e);
+    exit;
+}
 
 ?>
 <!DOCTYPE html>
@@ -60,16 +60,22 @@
         </div>
         <br>
         <div class="groups row">
-            <?php 
-                $qtdGroup = mysqli_num_rows($resultGroups);
-                for ($i = 1; $i <= $qtdGroup; $i++) {
-                $groups = mysqli_fetch_array($resultGroups);
+            <?php
+            if ($resultThemes) {
+                $num = mysqli_num_rows($resultThemes);
+                if ($num > 0) {
+                    while ($themes = mysqli_fetch_array($resultThemes)) {
             ?>
-            <div class="tag col-2">
-                <a href="#"></a><?php echo $groups["theme"]; ?></a>
+            <div class="col-3">
+                <a href="#" type="button" class="btn"><?php echo $themes['theme']; ?></a>
             </div>
             <?php
+                    }
                 }
+                ?>
+
+            <?php
+            }
             ?>
         </div>
         <br>
@@ -81,17 +87,17 @@
 
         <div id="feed">
             <?php
-                if ($result) {
+            if ($result) {
             ?>
             <form action="/timeline/topics/open_topic.php" METHOD="GET">
                 <?php
                     $num = mysqli_num_rows($result);
-                    if($num == 0) {
+                    if ($num == 0) {
                         echo "<p style='text-align:center;'>Não existem tópicos disponíveis. </p>";
                     }
                     for ($i = 1; $i <= $num; $i++) {
                         $dados = mysqli_fetch_array($result);
-                ?>
+                    ?>
                 <div id="topic" class="p-2 mb-1 bg-light text-dark">
                     <a href="../timeline/topics/open_topic.php?idTopic=<?php echo $dados['id'] ?>" id="sem-sublinhado">
                         <p id="titleTopic">
@@ -101,10 +107,10 @@
                 </div>
                 <?php
                     }
-                ?>
+                    ?>
             </form>
             <?php
-                }
+            }
             ?>
         </div>
     </div>

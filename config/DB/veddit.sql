@@ -15,11 +15,13 @@ insert into Users values(null,"ADM","abdalazard@gmail.com",md5("123"),"1");
 CREATE TABLE `Themes` (
 	`id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
 	`theme` VARCHAR(50) NOT NULL,
-	`creator_id` INT NOT NULL,
-	INDEX `id` (`id`),
-	INDEX `creator_id` (`creator_id`),
-	CONSTRAINT `FK_creatorId` FOREIGN KEY (`creator_id`) REFERENCES `users` (`id`) ON UPDATE NO ACTION ON DELETE NO ACTION
+	INDEX `id` (`id`)
 );
+
+insert into Themes values(null, 'Humor');
+insert into Themes values(null, 'Relacionamentos');
+insert into Themes values(null, 'Memes');
+insert into Themes values(null, 'Perguntas');
 
 CREATE TABLE `Topics` (
 	`id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
