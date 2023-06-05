@@ -1,6 +1,6 @@
 <?php
-    include '../../config/Autentication.php';
-    include '../../config/DB_Connection.php';
+    include '../../../config/Autentication.php';
+    include '../../../config/DB_Connection.php';
 
     $idTopic = $_GET['idTopic'];
 
@@ -38,23 +38,23 @@
     <nav class="navbar bg-light">
         <div class="container-fluid">
             <div class="row">
-                <a href="../../index.php" id="sem-sublinhado">
-                    <span id="title" class="navbar-brand"><img src="../../img//logo.svg" alt="VEDDIT" id="logo"></span>
+                <a href="../../../index.php" id="sem-sublinhado">
+                    <span id="title" class="navbar-brand"><img src="../../../img//logo.svg" alt="VEDDIT" id="logo"></span>
                 </a>
             </div>
             <div class="flex-end">
-                <a type="button" id="logout" class="btn" href="../../config/Logout.php" alt="Sair"><i
+                <a type="button" id="logout" class="btn" href="../../../config/Logout.php" alt="Sair"><i
                         class="bi bi-x-square-fill"></i> <b>Logout</b></a>
             </div>
         </div>
     </nav>
     <div class="container p-3 mb-2 bg-light text-dark" id="panel">
-        <img src="../../img//logo.svg" id="logo-login-panel" alt="VEDDIT">
+        <img src="../../../img//logo.svg" id="logo-login-panel" alt="VEDDIT">
         <h1><?php echo $topicData['title'] ?></h1>
         <div id="post">
             <div style="display: flex; justify-content: flex-end;">
                 <?php if($profile == 1 or $idUser == $topicData["user_id"]) {?>
-                <a href="DeleteTopic.php?idTopic=<?php echo $idTopic ?>" class="btn col-1" id="delete_button"><i
+                <a href="../../../src/Topics/DeleteTopic.php?idTopic=<?php echo $idTopic ?>" class="btn col-1" id="delete_button"><i
                         class="bi bi-trash3"></i></a>
                 <?php } ?>
             </div>
@@ -65,7 +65,7 @@
         </div>
         <br>
         <div id="comment">
-            <form action="CommentTopic.php" METHOD="POST">
+            <form action="../../../src/Comments/CommentTopic.php" METHOD="POST">
                 <div class="row">
                     <input type="text" hidden name="postId" value="<?php echo $idTopic; ?>">
                     <input type="text" class="col-8" placeholder="Atenção ao português" id="comment_space"
@@ -100,7 +100,7 @@
                     <h6 style="color: grey; font-size: 11px;"> <?php echo $commentData['name']; ?>
                         <?php if($profile == 1 or $idUser == $commentData['user_id']) {?>
                         | <a
-                            href="DeleteComment.php?idComment=<?php echo $commentData['id']."&topicId=$idTopic"; ?>">Excluir</a>
+                            href="../../../src/Comments/DeleteComment.php?CommentId=<?php echo $commentData['id']."&topicId=$idTopic"; ?>">Excluir</a>
                         <?php } ?>
                     </h6>
                 </div>

@@ -2,11 +2,12 @@
     width: 70px;
     height: 80px;
 }
-#logo-login-panel {
-    width: 100px;
-    height: 110px;
+#logo-panel {
+    width: 500px;
+    height: 250px;
     display: block;
     margin: 0px auto;
+    padding: 0;
 }
 #title {
     color:coral;

@@ -1,5 +1,5 @@
 <?php   
-    include "../config/DB_Connection.php";
+    include "../../config/DB_Connection.php";
     session_start();
 
     $email = $_POST['email'];
@@ -11,7 +11,7 @@
 
     if($total == 0) {
         $msg = "Login/Senha inválido(s)";
-        header("location:../index.php?msg=".$msg);
+        header("location:../../index.php?msg=".$msg);
         ?><script>alert( "Senha invalida!")</script>
         <?php   
     }
@@ -24,6 +24,6 @@
         $_SESSION['password'] = $dados['password'];
         $_SESSION['profile'] = $dados['profile'];
 
-        header("location:../timeline/timeline.php");
+        header("location:../../pages/timeline/timeline.php");
     }
 ?>
