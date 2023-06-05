@@ -16,5 +16,5 @@ if(! $result) {
     $msg = "<b style='color:red;'>Alguma coisa deu errado na publicação do seu tópico. :(</b>";
 }
 
-header("location:../timeline.php?msg=".$msg);
+header("location: ../../pages/timeline/timeline.php?msg=".$msg);
 ?>

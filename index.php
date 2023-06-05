@@ -3,7 +3,7 @@
 
     session_start();
     if(isset($_SESSION["email"])){
-        header("location:timeline/timeline.php");
+        header("location: pages/timeline/timeline.php");
     }
 ?>
 <!DOCTYPE html>
@@ -63,7 +63,7 @@
             }
         ?>
             </div>
-            <form action="login/VerifyUser.php" METHOD="POST">
+            <form action="src/Auth/VerifyUser.php" METHOD="POST">
                 <label class="label" for="email">Email:</label>
                 <input class="input" type="text" name="email" id="email">
 
@@ -73,7 +73,7 @@
                 <button class="btn btn-primary mb-4">Entrar</button>
 
                 <div class="text-muted text-center mb-1">É novo por aqui?</div>
-                <a href="register/register.php" class="btn btn-secondary">Cadastre-se</a>
+                <a href="pages/register/register.php" class="btn btn-secondary">Cadastre-se</a>
             </form>
         </div>
     </div>
