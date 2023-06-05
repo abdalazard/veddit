@@ -32,7 +32,7 @@ CREATE TABLE `Topics` (
     `theme_id` INT NULL,
 	INDEX `creator_id` (`creator_id`),
 	INDEX `theme_id` (`theme_id`),
-	CONSTRAINT `FK_creatorTopicId` FOREIGN KEY (`creator_id`) REFERENCES `users` (`id`) ON UPDATE NO ACTION ON DELETE NO ACTION,
+	CONSTRAINT `FK_creatorTopicId` FOREIGN KEY (`creator_id`) REFERENCES `users` (`id`) ON UPDATE CASCADE ON DELETE CASCADE,
     CONSTRAINT `FK_themeId` FOREIGN KEY (`theme_id`) REFERENCES `themes` (`id`) ON UPDATE NO ACTION ON DELETE NO ACTION
 
 
@@ -47,6 +47,7 @@ CREATE TABLE `Comments` (
 	INDEX `creator_id` (`creator_id`),
 	INDEX `topic_id` (`topic_id`),
 	CONSTRAINT `FK_creatorCommentId` FOREIGN KEY (`creator_id`) REFERENCES `users` (`id`) ON UPDATE NO ACTION ON DELETE NO ACTION,
-    CONSTRAINT `FK_topicId` FOREIGN KEY (`topic_id`) REFERENCES `topics` (`id`) ON UPDATE NO ACTION ON DELETE NO ACTION
+    CONSTRAINT `FK_topicId` FOREIGN KEY (`topic_id`) REFERENCES `topics` (`id`) ON UPDATE CASCADE ON DELETE CASCADE
 
 );
+
