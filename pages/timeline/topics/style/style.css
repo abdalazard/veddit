@@ -2,9 +2,9 @@
     width: 70px;
     height: 80px;
 }
-#logo-login-panel {
-    width: 100px;
-    height: 110px;
+#logo-panel {
+    width: 500px;
+    height: 250px;
     display: block;
     margin: 0px auto;
 }
@@ -12,8 +12,8 @@
     color:coral;
 }
 #panel {
-    padding: 60px 60px 60px 60px;
-    margin-top: 30px;
+    padding: 20px 20px 20px 20px;
+    margin-top: 10px;
     border-radius: 10px;            
 }        
 

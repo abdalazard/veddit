@@ -7,15 +7,14 @@
     height: 250px;
     display: block;
     margin: 0px auto;
-    padding: 0;
 }
 #title {
     color:coral;
 }
 #panel {
-    padding: 60px 60px 60px 60px;
-    margin-top: 30px;
-    border-radius: 10px;            
+    padding: 20px 20px 20px 20px;
+    margin-top: 10px;
+    border-radius: 10px;             
 }        
 
 #button {

@@ -20,7 +20,7 @@ try {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-    <link rel="shortcut icon" href="../../../img//logo.svg">
+    <link rel="shortcut icon" href="/img//logo.svg">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
 
     <title>Tópicos</title>
@@ -31,9 +31,8 @@ try {
     <nav class="navbar bg-light">
         <div class="container-fluid">
             <div class="row">
-                <a href="../../../index.php" id="sem-sublinhado">
-                    <span id="title" class="navbar-brand"><img src="../../../img//logo.svg" alt="VEDDIT"
-                            id="logo"></span>
+                <a href="/index.php" id="sem-sublinhado">
+                    <span id="title" class="navbar-brand"><img src="/img/logo.svg" alt="VEDDIT" id="logo"></span>
                 </a>
             </div>
             <div class="dropdown">
@@ -44,14 +43,14 @@ try {
                 <ul class="dropdown-menu">
                     <li><a class="dropdown-item" href="#">Action</a></li>
                     <li><a class="dropdown-item" href="#">Another action</a></li>
-                    <li><a type="text" class="dropdown-item" style="color:red;" href="../../../config/Logout.php"
+                    <li><a type="text" class="dropdown-item" style="color:red;" href="/config/Logout.php"
                             alt="Sair"><strong>Logout</strong></a></li>
                 </ul>
             </div>
         </div>
     </nav>
     <div class="container p-3 mb-2 bg-light text-dark" id="panel">
-        <img src="../../../img//logo.svg" id="logo-panel" alt="VEDDIT">
+        <img src="/img//logo.svg" id="logo-panel" alt="VEDDIT">
         <div id="feed">
             <?php
             if ($result) {
@@ -66,12 +65,12 @@ try {
                         $dados = mysqli_fetch_array($result);
                     ?>
                 <div id="topic" class="p-2 mb-1 bg-light text-dark">
-                    <a href="../../timeline/topics/open_topic.php?idTopic=<?php echo $dados['id'] ?>"
+                    <a href="/pages/timeline/topics/open_topic.php?idTopic=<?php echo $dados['id'] ?>"
                         id="sem-sublinhado">
                         <div id="titleTopic">
                             <p><?php echo $dados['title'] ?>
                                 <?php if ($_SESSION['profile'] == 1) { ?>
-                                <a href="../../../src/Topics/DeleteTopic.php?idTopic=<?php echo $dados['id'] ?>"
+                                <a href="/src/Topics/DeleteTopic.php?idTopic=<?php echo $dados['id'] ?>"
                                     class="btn col-1" id="delete_button"><i class="bi bi-trash3"></i></a>
                                 <?php } ?>
                             </p>
