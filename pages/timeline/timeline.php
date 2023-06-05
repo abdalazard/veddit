@@ -36,11 +36,17 @@ try {
                     <span id="title" class="navbar-brand"><img src="../../img/logo.svg" alt="VEDDIT" id="logo"></span>
                 </a>
             </div>
-            <div class="flex-end">
-                <a type="button" id="logout" class="btn" href="../../config/Logout.php" alt="Sair">
-                    <strong>Logout</strong>
+            <div class="dropdown flex-end">
+                <a class="btn dropdown-toggle" href="#" role="button" id="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Dashboard
                 </a>
+                <ul class="dropdown-menu m-2">
+                    <li><a class="dropdown-item" href="#">Perfil</a></li>
+                    <li><a class="dropdown-item" href="#">Configurações</a></li>
+                    <li><a type="text" class="dropdown-item" style="color:red;" href="../../config/Logout.php" alt="Sair"><strong>Logout</strong></a></li>
+                </ul>
             </div>
+
         </div>
     </nav>
     <div class="container p-3 bg-light text-dark" id="panel">
@@ -120,6 +126,10 @@ try {
         </div>
     </div>
     <footer> &copy Todos os direitos reservados 2022</footer>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js" integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS" crossorigin="anonymous">
+    </script>
 </body>
 
 </html>
