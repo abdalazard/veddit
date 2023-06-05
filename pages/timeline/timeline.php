@@ -21,8 +21,7 @@ try {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <link rel="shortcut icon" href="../../img//logo.svg">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
     <link href="style/style.css" rel="stylesheet">
@@ -66,10 +65,10 @@ try {
                 if ($num > 0) {
                     while ($themes = mysqli_fetch_array($resultThemes)) {
             ?>
-            <div class="col-3">
-                <a href="themes/topicswiththemes.php?id=<?php echo $themes['id'] ?>" type="button" class="btn"><?php echo $themes['theme']; ?></a>
-            </div>
-            <?php
+                        <div class="col-3">
+                            <a href="themes/themes_list.php?themeId=<?php echo $themes['id'] ?>" type="button" class="btn"><?php echo $themes['theme']; ?></a>
+                        </div>
+                <?php
                     }
                 }
                 ?>
@@ -80,35 +79,41 @@ try {
         </div>
         <br>
         <?php if (isset($_GET["msg"])) { ?>
-        <div style="text-align:center;">
-            <p><?php echo $_GET['msg'] ?></p>
-        </div>
+            <div style="text-align:center;">
+                <p><?php echo $_GET['msg'] ?></p>
+            </div>
         <?php } ?>
 
         <div id="feed">
             <?php
             if ($result) {
             ?>
-            <form action="topics/open_topic.php" METHOD="GET">
-                <?php
+                <form action="topics/open_topic.php" METHOD="GET">
+                    <?php
                     $num = mysqli_num_rows($result);
-                    if ($num == 0) {
+                    if ($num <= 0) {
                         echo "<p style='text-align:center;'>Não existem tópicos disponíveis. </p>";
                     }
                     for ($i = 1; $i <= $num; $i++) {
                         $dados = mysqli_fetch_array($result);
                     ?>
-                <div id="topic" class="p-2 mb-1 bg-light text-dark">
-                    <a href="topics/open_topic.php?idTopic=<?php echo $dados['id'] ?>" id="sem-sublinhado">
-                        <p id="titleTopic">
-                            <?php echo $dados['title'] ?>
-                        </p>
-                    </a>
-                </div>
-                <?php
+                        <div id="topic" class="p-2 mb-1 bg-light text-dark">
+                            <a href="../timeline/topics/open_topic.php?idTopic=<?php echo $dados['id'] ?>" id="sem-sublinhado">
+                                <div id="titleTopic">
+                                    <p><?php echo $dados['title'] ?>
+                                        <?php if ($_SESSION['profile'] == 1) { ?>
+                                            <a href="../../src/Topics/DeleteTopic.php?idTopic=<?php echo $dados['id'] ?>" class="btn col-1" id="delete_button"><i class="bi bi-trash3"></i></a>
+                                        <?php } ?>
+                                    </p>
+                                </div>
+
+
+                            </a>
+                        </div>
+                    <?php
                     }
                     ?>
-            </form>
+                </form>
             <?php
             }
             ?>

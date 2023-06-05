@@ -12,7 +12,7 @@ $result = mysqli_query($conn,$sql);
 
 if(! $result) {
     $msg = "Erro ao comentar";
-    header("location:./open_topic.php?idTopic=".$topicId."&msg=".$msg."");
+    header("location: ../../pages/timeline/topics/open_topic.php?idTopic=".$topicId."&msg=".$msg."");
 }
 
-header("location:./open_topic.php?idTopic=".$topicId."");
+header("location: ../../pages/timeline/topics/open_topic.php?idTopic=".$topicId."");
