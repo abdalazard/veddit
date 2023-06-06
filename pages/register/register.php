@@ -1,3 +1,4 @@
+<?php $src_url = "../../src"; ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -57,7 +58,7 @@
                 }
                 ?>
             </div>
-            <form action="/src/Register/CreateUser.php" METHOD="POST">
+            <form action=<?php $src_url."/Register/CreateUser.php" ?> METHOD="POST">
                 <label class="label" for="">Nome de usuário:</label>
                 <input class="input" type="text" name="user" required>
 

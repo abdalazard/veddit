@@ -1,6 +1,7 @@
-<?php 
-    session_start();
-    session_destroy();
+<?php
+session_start();
+session_destroy();
+$home_url = "..";
 
-    $msg = "Logout efetuado";
-    header("location: /index.php?msg=".$msg);
+$msg = "Logout efetuado";
+header("location: $home_url/index.php?msg=" . $msg);
