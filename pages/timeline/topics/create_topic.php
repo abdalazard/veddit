@@ -62,17 +62,19 @@ try {
                     $num = mysqli_num_rows($resultThemes);
                     if ($num > 0) { ?>
                         <label>Selecione o tema: </a>
-                            <select name="theme">
+                            <select name="theme" class="col-6">
                                 <?php while ($theme = mysqli_fetch_array($resultThemes)) { ?>
-                                    <option value="<?php echo $theme['id']; ?>"><?php echo $theme['theme']; ?></option>
+                                    <option value=" <?php echo $theme['id']; ?>"><?php echo $theme['theme']; ?>
+                                    </option>
                         <?php }
                             }
                         } ?>
                             </select>
+                            <div>
+                                <input type="submit" class="btn col-4" id="button" value="Publicar">
+                            </div>
             </div>
-            <div>
-                <input type="submit" class="btn col-4" id="button" value="Publicar">
-            </div>
+
         </form>
     </div>
     <footer> &copy Todos os direitos reservados 2022</footer>

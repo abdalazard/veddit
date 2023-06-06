@@ -2,6 +2,12 @@
 include '../../../config/Autentication.php';
 include "../../../config/DB_Connection.php";
 
+$themeId = $_GET['themeId'];
+
+$sqlTheme = "SELECT theme FROM themes WHERE id LIKE '" . $themeId . "'";
+$resultTheme = mysqli_query($conn, $sqlTheme);
+$theme = mysqli_fetch_array($resultTheme);
+
 try {
     $sql = "SELECT * FROM Topics WHERE theme_id LIKE '" . $_GET['themeId'] . "' ORDER BY id DESC";
     $result = mysqli_query($conn, $sql);
@@ -52,6 +58,7 @@ try {
     <div class="container p-3 mb-2 bg-light text-dark" id="panel">
         <img src="/img//logo.svg" id="logo-panel" alt="VEDDIT">
         <div id="feed">
+            <h3 class="flex-start m-2 p-3"><?php echo $theme[0]; ?></h3>
             <?php
             if ($result) {
             ?>
