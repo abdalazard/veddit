@@ -6,7 +6,7 @@ $sql = "SELECT * FROM Topics ORDER BY id DESC";
 $result = mysqli_query($conn, $sql);
 
 try {
-    $sqlThemes = "SELECT * FROM themes";
+    $sqlThemes = "SELECT * FROM Themes";
     $resultThemes = mysqli_query($conn, $sqlThemes);
 } catch (mysqli_sql_exception $e) {
     var_dump($e);
