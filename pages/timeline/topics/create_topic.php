@@ -5,7 +5,7 @@ include "../../../config/DB_Connection.php";
 $title = $_GET['title'];
 
 try {
-    $sql = "SELECT * FROM themes";
+    $sql = "SELECT * FROM Themes";
     $resultThemes = mysqli_query($conn, $sql);
 } catch (mysqli_sql_exception $e) {
     var_dump($e);

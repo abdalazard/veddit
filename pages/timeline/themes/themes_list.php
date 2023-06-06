@@ -4,7 +4,7 @@ include "../../../config/DB_Connection.php";
 
 $themeId = $_GET['themeId'];
 
-$sqlTheme = "SELECT theme FROM themes WHERE id LIKE '" . $themeId . "'";
+$sqlTheme = "SELECT theme FROM Themes WHERE id LIKE '" . $themeId . "'";
 $resultTheme = mysqli_query($conn, $sqlTheme);
 $theme = mysqli_fetch_array($resultTheme);
 
@@ -24,8 +24,7 @@ try {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <link rel="shortcut icon" href="/img//logo.svg">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
 
@@ -42,15 +41,13 @@ try {
                 </a>
             </div>
             <div class="dropdown">
-                <a class="btn dropdown-toggle" href="#" role="button" id="button" data-bs-toggle="dropdown"
-                    aria-expanded="false">
+                <a class="btn dropdown-toggle" href="#" role="button" id="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Dashboard
                 </a>
                 <ul class="dropdown-menu">
                     <li><a class="dropdown-item" href="#">Action</a></li>
                     <li><a class="dropdown-item" href="#">Another action</a></li>
-                    <li><a type="text" class="dropdown-item" style="color:red;" href="/config/Logout.php"
-                            alt="Sair"><strong>Logout</strong></a></li>
+                    <li><a type="text" class="dropdown-item" style="color:red;" href="/config/Logout.php" alt="Sair"><strong>Logout</strong></a></li>
                 </ul>
             </div>
         </div>
@@ -62,8 +59,8 @@ try {
             <?php
             if ($result) {
             ?>
-            <form action="../topics/open_topic.php" METHOD="GET">
-                <?php
+                <form action="../topics/open_topic.php" METHOD="GET">
+                    <?php
                     $num = mysqli_num_rows($result);
                     if ($num == 0) {
                         echo "<p style='text-align:center;'>Não existem tópicos disponíveis. </p>";
@@ -71,23 +68,21 @@ try {
                     for ($i = 1; $i <= $num; $i++) {
                         $dados = mysqli_fetch_array($result);
                     ?>
-                <div id="topic" class="p-2 mb-1 bg-light text-dark">
-                    <a href="/pages/timeline/topics/open_topic.php?idTopic=<?php echo $dados['id'] ?>"
-                        id="sem-sublinhado">
-                        <div id="titleTopic">
-                            <p><?php echo $dados['title'] ?>
-                                <?php if ($_SESSION['profile'] == 1) { ?>
-                                <a href="/src/Topics/DeleteTopic.php?idTopic=<?php echo $dados['id'] ?>"
-                                    class="btn col-1" id="delete_button"><i class="bi bi-trash3"></i></a>
-                                <?php } ?>
-                            </p>
+                        <div id="topic" class="p-2 mb-1 bg-light text-dark">
+                            <a href="/pages/timeline/topics/open_topic.php?idTopic=<?php echo $dados['id'] ?>" id="sem-sublinhado">
+                                <div id="titleTopic">
+                                    <p><?php echo $dados['title'] ?>
+                                        <?php if ($_SESSION['profile'] == 1) { ?>
+                                            <a href="/src/Topics/DeleteTopic.php?idTopic=<?php echo $dados['id'] ?>" class="btn col-1" id="delete_button"><i class="bi bi-trash3"></i></a>
+                                        <?php } ?>
+                                    </p>
+                                </div>
+                            </a>
                         </div>
-                    </a>
-                </div>
-                <?php
+                    <?php
                     }
                     ?>
-            </form>
+                </form>
             <?php
             }
             ?>
@@ -97,11 +92,9 @@ try {
 
     <footer> &copy Todos os direitos reservados 2022</footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous">
     </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"
-        integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js" integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS" crossorigin="anonymous">
     </script>
 </body>
 

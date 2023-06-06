@@ -50,7 +50,7 @@ $idUser = $_SESSION['idUser'];
                 <ul class="dropdown-menu">
                     <li><a class="dropdown-item" href="#">Perfil</a></li>
                     <li><a class="dropdown-item" href="#">Configuração</a></li>
-                    <li><a type="text" id="logout" class="dropdown-item" style="color:red;" href="/config/Logout.php"
+                    <li><a type="text" class="dropdown-item" style="color:red;" href="/config/Logout.php"
                             alt="Sair"><strong>Logout</strong></a></li>
                 </ul>
             </div>
