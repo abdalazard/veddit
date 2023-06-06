@@ -3,7 +3,7 @@ $src_url = "../../src";
 $img_url = "../../img";
 $config_url = "../../config";
 $pages_url = "../../pages";
-$home_url = "../../..";
+$home_url = "../..";
 
 include $config_url . "/Autentication.php";
 include $config_url . "/DB_Connection.php";
