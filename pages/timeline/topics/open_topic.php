@@ -3,7 +3,7 @@
 $src_url = "../../../src";
 $img_url = "../../../img";
 $config_url = "../../../config";
-$home_url = "../../../";
+$home_url = "../../..";
 
 include $config_url . "/Autentication.php";
 include $config_url . "/DB_Connection.php";
@@ -54,7 +54,7 @@ $idUser = $_SESSION['idUser'];
                 <ul class="dropdown-menu">
                     <li><a class="dropdown-item" href="#">Perfil</a></li>
                     <li><a class="dropdown-item" href="#">Configuração</a></li>
-                    <li><a type="text" class="dropdown-item" style="color:red;" href="<?php $config_url . '/Logout.php' ?>" alt="Sair"><strong>Logout</strong></a></li>
+                    <li><a type="text" class="dropdown-item" style="color:red;" href="<?php echo $config_url . '/Logout.php' ?>" alt="Sair"><strong>Logout</strong></a></li>
                 </ul>
             </div>
         </div>
