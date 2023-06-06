@@ -2,7 +2,7 @@
 $src_url = "../../../src";
 $img_url = "../../../img";
 $config_url = "../../../config";
-$home_url = "../../../";
+$home_url = "../../..";
 
 include $config_url . "/Autentication.php";
 include $config_url . "/DB_Connection.php";
@@ -36,7 +36,7 @@ try {
     <nav class="navbar bg-light">
         <div class="container-fluid">
             <div class="row">
-                <a href="<?php $home_url . '/index.php' ?>" id="sem-sublinhado">
+                <a href="<?php echo $home_url . '/index.php' ?>" id="sem-sublinhado">
                     <span id="title" class="navbar-brand"><img src="<?php echo $img_url . '/logo.svg' ?>" alt="VEDDIT"
                             id="logo">
                     </span>
