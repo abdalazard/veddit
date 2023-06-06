@@ -1,29 +1,36 @@
-<?php   
-    include "../../config/DB_Connection.php";
-    session_start();
+<?php
+session_start();
+$pages_url = "../../pages";
+$home_url = "../../";
+$config_url = "../../config";
 
-    $email = $_POST['email'];
-    $password = MD5($_POST['password']);
+include $config_url . "/DB_Connection.php";
 
-    $sql = "SELECT * FROM Users WHERE email LIKE '".$email."' AND password LIKE '".$password."'";
-    $result = mysqli_query($conn, $sql);
-    $total = mysqli_num_rows($result);
+$email = $_POST['email'];
+$password = MD5($_POST['password']);
+$url =
 
-    if($total == 0) {
-        $msg = "Login/Senha inválido(s)";
-        header("location:../../index.php?msg=".$msg);
-        ?><script>alert( "Senha invalida!")</script>
-        <?php   
-    }
+    $sql = "SELECT * FROM Users WHERE email LIKE '" . $email . "' AND password LIKE '" . $password . "'";
+$result = mysqli_query($conn, $sql);
+$total = mysqli_num_rows($result);
 
-    $dados = mysqli_fetch_array($result);
-    if(!strcmp($password, $dados['password'] )) {
-        $_SESSION['idUser'] = $dados['id'];
-        $_SESSION['name'] = $dados['name'];
-        $_SESSION['email'] = $dados['email'];
-        $_SESSION['password'] = $dados['password'];
-        $_SESSION['profile'] = $dados['profile'];
+if ($total == 0) {
+    $msg = "Login/Senha inválido(s)";
+    header("location:" . $home_url . "/index.php?msg=" . $msg);
+?><script>
+        alert("Senha invalida!")
+    </script>
+<?php
+}
 
-        header("location:../../pages/timeline/timeline.php");
-    }
+$dados = mysqli_fetch_array($result);
+if (!strcmp($password, $dados['password'])) {
+    $_SESSION['idUser'] = $dados['id'];
+    $_SESSION['name'] = $dados['name'];
+    $_SESSION['email'] = $dados['email'];
+    $_SESSION['password'] = $dados['password'];
+    $_SESSION['profile'] = $dados['profile'];
+
+    header("location:" . $pages_url . "/timeline/timeline.php");
+}
 ?>
