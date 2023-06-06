@@ -1,10 +1,10 @@
-<?php 
-session_start(); 
+<?php
+session_start();
+$home_url = "..";
 
-if(!isset($_SESSION["email"])){
+if (!isset($_SESSION["email"])) {
 
     session_destroy();
     $msg = "Acesso negado";
-    header("location:../index.php?msg=".$msg); //redirecionamento em PHP
+    header("location: $home_url/index.php?msg=" . $msg);
 }
-?>
