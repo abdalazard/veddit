@@ -46,7 +46,7 @@ try {
                 <ul class="dropdown-menu">
                     <li><a class="dropdown-item" href="#">Action</a></li>
                     <li><a class="dropdown-item" href="#">Another action</a></li>
-                    <li><a type="text" class="dropdown-item" style="color:red;" href="<?php $config_url . '/Logout.php' ?>" alt="Sair"><strong>Logout</strong></a></li>
+                    <li><a type="text" class="dropdown-item" style="color:red;" href="<?php echo $config_url . '/Logout.php' ?>" alt="Sair"><strong>Logout</strong></a></li>
                 </ul>
             </div>
         </div>
