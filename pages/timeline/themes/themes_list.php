@@ -2,7 +2,6 @@
 $src_url = "../../../src";
 $img_url = "../../../img";
 $config_url = "../../../config";
-$home_url = "../../..";
 
 include $config_url . "/Autentication.php";
 include $config_url . "/DB_Connection.php";
@@ -42,7 +41,7 @@ try {
     <nav class="navbar bg-light">
         <div class="container-fluid">
             <div class="row">
-                <a href="<?php echo $home_url . '/index.php' ?>" id="sem-sublinhado">
+                <a href="../../../index.php" id="sem-sublinhado">
                     <span id="title" class="navbar-brand"><img src="<?php echo $img_url . '/logo.svg' ?>" alt="VEDDIT"
                             id="logo"></span>
                 </a>
@@ -56,7 +55,7 @@ try {
                     <li><a class="dropdown-item" href="#">Action</a></li>
                     <li><a class="dropdown-item" href="#">Another action</a></li>
                     <li><a type="text" class="dropdown-item" style="color:red;"
-                            href="<?php $config_url . '/Logout.php' ?>" alt="Sair"><strong>Logout</strong></a></li>
+                            href="<?php echo $config_url . '/Logout.php' ?>" alt="Sair"><strong>Logout</strong></a></li>
                 </ul>
             </div>
         </div>
