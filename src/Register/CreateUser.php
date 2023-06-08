@@ -1,9 +1,9 @@
 <?php
-$pages_url = "../../pages";
+$register_url = "../../register";
 $home_url = "../../";
 $config_url = "../../config";
 
-include $config_url . '/config/DB_Connection.php';
+include $config_url . '/DB_Connection.php';
 
 $name = $_POST['user'];
 $email = $_POST['email'];
@@ -14,7 +14,7 @@ $search = mysqli_query($conn, $email_verify);
 if (mysqli_num_rows($search) > 0) {
     mysqli_close($conn);
     $msg = 'Este usuário já existe';
-    header("location: " . $pages_url . "/register/register.php?msg=" . $msg);
+    header("location: ".$register_url."/register.php?msg=" . $msg);
 }
 
 if (!empty($name)) {
@@ -27,5 +27,5 @@ if (!empty($name)) {
         header("location:" . $pages_url . "/register/register.php?msg=" . $msg);
     }
     $msg = "Usuário cadastrado com sucesso!";
-    header("location:" . $home_url . "/index.php?msg=" . $msg);
+    header("location:" . $home_url . "index.php?msg=" . $msg);
 }

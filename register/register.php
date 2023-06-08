@@ -1,4 +1,4 @@
-<?php $src_url = "../../src"; ?>
+<?php $src_url = "../src"; ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -21,7 +21,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap-utilities.min.css" rel="stylesheet"
         crossorigin="anonymous">
 
-    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="../style.css">
 </head>
 
 <body>
@@ -51,7 +51,6 @@
 
             <div class="text-2xl text-center mb-3">Crie sua conta</div>
             <div class="text-center">
-                <!-- Criar Issues para estilização da mensagem de "não foi possível logar"-->
                 <?php
                 if (isset($_GET["msg"])) {
                     echo $_GET["msg"];
@@ -71,7 +70,7 @@
                 <button class="btn btn-primary mb-4">Criar conta</button>
 
                 <div class="text-center">
-                    <span class="text-muted mb-1">Já possui uma conta?</span> <a href="../../index.php">Entre aqui</a>
+                    <span class="text-muted mb-1">Já possui uma conta?</span> <a href="../index.php">Entre aqui</a>
                 </div>
             </form>
         </div>
