@@ -16,7 +16,7 @@ $total = mysqli_num_rows($result);
 
 if ($total == 0) {
     $msg = "Login/Senha inválido(s)";
-    header("location:" . $home_url . "/index.php?msg=" . $msg);
+    header("location:" . $home_url . "index.php?msg=" . $msg);
 ?><script>
         alert("Senha invalida!")
     </script>

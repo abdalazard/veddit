@@ -24,7 +24,7 @@ if (!empty($name)) {
     if (!$result) {
         mysqli_close($conn);
         $msg = "Algum problema foi identificado ao tentar cadastrar este usuário./n Por favor, entre em contato com o suporte.";
-        header("location:" . $pages_url . "/register/register.php?msg=" . $msg);
+        header("location:" . $pages_url . "/register.php?msg=" . $msg);
     }
     $msg = "Usuário cadastrado com sucesso!";
     header("location:" . $home_url . "index.php?msg=" . $msg);
